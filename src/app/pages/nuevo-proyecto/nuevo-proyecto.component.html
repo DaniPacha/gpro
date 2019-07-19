@@ -1,0 +1,180 @@
+<div class="col s12">    
+    <div class=" _breadcrumbs-dark pb-0 animated fadeIn" id="breadcrumbs-wrapper">
+        <!-- Search for small screen-->
+        <div class="container-page">
+            <div class="row ">
+                <div class="col s12">
+                    <div class="title-page ">
+                        <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text">
+                            Nuevo Proyecto <i class="material-icons">create</i>                                    
+                        </h2>
+                        <nav class="breadcrumb-page">
+                            <div class="nav-wrapper">
+                                <div class="col s12">
+                                    <a routerLink="inicio" class="breadcrumb" disabled>Inicio</a>
+                                    <a routerLink="inicio" class="breadcrumb" disabled>Proyectos</a>
+                                    <span class="breadcrumb" disabled>Nuevo Proyecto</span>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col s12  animated fadeIn">
+    <div class="container-page">
+        <div class="seaction">
+
+            <div class="row">       
+                    
+                <div class="col s12 m12 l12">
+                    <div id="Form-advance" class="card ">
+                        <div class="card-content">
+                            <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto( )"  >
+                                <div class="row">
+                                    <div class="input-field input-bordered col l8 s12">
+                                        <input id="nombre_proyecto" type="text" 
+                                            formControlName="nombre_proyecto"
+                                            [ngClass]="{'has-error': fProyecto.get('nombre_proyecto').invalid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine, 
+                                                        'has-validated': fProyecto.get('nombre_proyecto').valid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine }"
+                                            data-length="120"
+                                        >
+                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                    </div>
+
+                                    <div class="input-field input-bordered col l4 s12">
+                                        <input id="nombre_corto" type="text" 
+                                            formControlName="nombre_corto"
+                                            [ngClass]="{'has-error': fProyecto.get('nombre_corto').invalid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine, 
+                                                        'has-validated': fProyecto.get('nombre_corto').valid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine }"
+                                            data-length="20"
+                                        >
+                                        <label for="nombre_corto">Nombre corto</label>
+                                        <!-- <span *ngIf=" nombre_corto.errors?.minlength " class="helper-text animated fadeIn" >
+                                            Tiene que tener entre 5 y 18 caracteres
+                                        </span>-->
+
+                                    </div>
+                                </div>                                
+
+                                <div class="row">
+                                    <div class="input-field input-bordered col l8 s12">
+                                        <textarea id="descripcion_proyecto" class="materialize-textarea"  
+                                            formControlName="descripcion_proyecto"
+                                            [ngClass]="{'has-error': fProyecto.get('descripcion_proyecto').invalid && fProyecto.get('descripcion_proyecto').touched && !fProyecto.get('descripcion_proyecto').pristine, 
+                                                        'has-validated': fProyecto.get('descripcion_proyecto').valid && fProyecto.get('descripcion_proyecto').touched && !fProyecto.get('descripcion_proyecto').pristine }"
+                                            data-length="300"
+                                        >
+                                        </textarea>
+                                        <label for="descripcion_proyecto">Descripción</label>
+                                    </div>     
+
+                                    <div class="input-field input-bordered col l4 s12"
+                                    [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
+                                                'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                                    >
+                                        <select formControlName="tipo_proyecto" materialize="FormSelect" >
+                                            <option value="" disabled selected>Elige un tipo</option>
+                                            <option value="1">Académico</option>
+                                            <option value="2">Investigación</option>
+                                            <option value="3">Social</option>
+                                            <option value="4">Espiritual</option>
+                                            <option value="5">Vinculación con el Medio</option>
+                                        </select>
+                                        <label
+                                        [ngClass]="{'has-error-text': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
+                                                    'has-validated-text': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                                        >Tipo de Proyecto</label>
+                                        <span class="helper-text" data-error="wrong" data-success="right">tiene que elegir un tipo</span>
+                                    </div>                           
+                                </div>   
+                                
+                                <div class="row">
+                                    <div class="input-field input-bordered col s12">
+                                        <input id="foto_proyecto" type="text"
+                                            formControlName="foto_proyecto"
+                                        >                                        
+                                        <label for="foto_proyecto">Foto Proyecto</label>
+                                        <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field input-bordered col m6 s12">
+                                        <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
+                                            materialize="Datepicker"
+                                            [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true}]"
+                                            formControlName="fecha_inicio_proyecto"
+                                            [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
+                                                    'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
+                                        >
+                                        <label for="fecha_inicio_proyecto">Fecha de Inicio</label>
+                                        <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
+                                    </div>
+
+                                    <div class="input-field input-bordered col m6 s12">
+                                        <input type="text" class="datepicker" id="fecha_fin_proyecto"
+                                            materialize="Datepicker"
+                                        [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true, minDate: (fProyecto.get('fecha_inicio_proyecto').value)}]"
+                                            formControlName="fecha_fin_proyecto"
+                                            [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
+                                                    'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"
+                                        >
+                                        <label for="fecha_fin_proyecto">Fecha de Termino</label>
+                                        <span class="helper-text" data-error="wrong" data-success="right">y cuando termina</span>                                        
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button class="btn upeu waves-effect waves-light right" type="submit" name="action" >
+                                            Siguiente <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="clo s12">
+
+                                            {{fProyecto.valid}}
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Flotante  -->
+        <!-- <div style="bottom: 50px; right: 19px;" class="fixed-action-btn direction-top">
+            <a class="btn-floating btn-large gradient-45upeu-dark gradient-shadow"><i class="material-icons">add</i></a>
+            <ul>
+                <li>
+                    <a href="css-helpers.html" class="btn-floating blue">
+                        <i class="material-icons">help_outline</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards-extended.html" class="btn-floating green">
+                        <i class="material-icons">widgets</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="app-calendar.html" class="btn-floating amber">
+                        <i class="material-icons">today</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="app-email.html" class="btn-floating red">
+                        <i class="material-icons">mail_outline</i>
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+        <!-- Fin de Bottom Flotante -->
+    </div>
+</div>

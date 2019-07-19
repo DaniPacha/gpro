@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #eee
+}
+
+.body-menu-link.collapsible-body{
+    padding: 0;
+}
+
+.icon-item-menu{
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+}
+
+.name-menu-item{
+    margin-left: 24px
+}
+
+.collection-item{
+    position: relative;
+}
+
+.upeu-garnet-text{
+    color: #992e45;
+}
+.gradient-45upeu-dark
+{
+      background: #992e45;
+      background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) !important;
+      background: -webkit-linear-gradient(right, #992e45, #6b202e) !important; 
+      /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) !important; */
+      background:      -o-linear-gradient(right, #992e45, #6b202e) !important;
+      background:         linear-gradient(-90deg, #992e45, #6b202e) !important;
+}
+.gradient-45upeu-dark.gradient-shadow
+{
+    -webkit-box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) !important;
+            box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) !important;
+}
+
+.logo-upeu-gpro{
+    margin: 0 16px;
+    overflow: hidden;
+    height: 64px;
+}
+
+.logo-upeu-gpro img{    
+    display: inline-block;
+    height: 40px;    
+    vertical-align: middle;
+}
+
+.logo-upeu-gpro span{
+    display: inline-block;
+    font-size: 32px;
+    margin-left: 8px;
+    /* vertical-align: middle; */
+}
+
+.pdt-16{
+    padding-top: 16px;
+}
+
+.menu-celular{
+    position: absolute;
+    top: 15px;
+    z-index: 998;
+    color: #ececec;
+    left: 8px;
+}
+
+.menu-celular i{
+    font-size: 36px;
+}
+
+.container-page{
+    padding: 0 16PX;
+}
+
+/* BREADCRUMB DE CADA PAGINA */
+.breadcrumb-page {
+    background-color: transparent;
+    box-shadow: none;
+    height: 32px;
+    line-height: 32px;
+}
+
+.breadcrumb-page a, .breadcrumb::before {
+    color: #444 !important;
+}
+.breadcrumb-page a:hover {
+    color: rgba(153, 46, 69, 0.5) !important;
+}
+
+.breadcrumb-page span{
+    color: #888 !important;
+}
+
+/* BREADCRUMB DE CADA PAGINA  FIN */
+
+
+/* TITULO DE CADA PAGÍNA */
+.title-page h2{
+    margin-top: 0;
+    font-size: 38px;
+}
+
+.card {
+    overflow: hidden;
+    margin: 1rem 0 .5rem 0;
+}
+
+
+/* FORMULARIOS */
+.input-field{
+    margin: 0;
+}
