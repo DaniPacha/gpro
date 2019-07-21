@@ -1,5 +1,5 @@
 <div class="col s12">    
-    <div class=" _breadcrumbs-dark pb-0 animated fadeIn" id="breadcrumbs-wrapper">
+    <div class="pb-0 animated fadeIn" id="">
         <!-- Search for small screen-->
         <div class="container-page">
             <div class="row ">
@@ -31,7 +31,7 @@
             <div class="row">       
                     
                 <div class="col s12 m12 l12">
-                    <div id="Form-advance" class="card ">
+                    <div id="Form-advance" class="card z-depth-3">
                         <div class="card-content">
                             <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto( )"  >
                                 <div class="row">
@@ -130,17 +130,17 @@
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <button class="btn upeu waves-effect waves-light right" type="submit" name="action" >
+                                        <button class="btn upeu waves-effect waves-light right" type="submit" name="action" [disabled]="fProyecto.invalid" >
                                             Siguiente <i class="material-icons right">send</i>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="clo s12">
 
                                             {{fProyecto.valid}}
                                     </div>
-                                </div>
+                                </div> -->
 
                             </form>
                         </div>

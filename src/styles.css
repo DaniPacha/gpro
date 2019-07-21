@@ -1,24 +1,191 @@
 body {
-    background-color: #eee
+    background-color: #ffffff;
 }
 
-.body-menu-link.collapsible-body{
-    padding: 0;
+/* SIDENAV */
+.sidenav-main {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all;
 }
 
-.icon-item-menu{
-    font-size: 20px;
+/* LOGO */
+.brand-sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 56px;
+    background: #6b202e;
+    -webkit-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, .2);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.brand-sidenav .logo-wrapper {
+    font-size: 3rem;
+    line-height: 56px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* .brand-sidenav .brand-logo {
+    line-height:
+    font-size: 32px; 0;
+    position: absolute;
+    display: inline-block;
+    margin: 1px 0;
+    padding: 0px 12px;
+    color: #ffff;
+} */
+
+.brand-sidenav .logo-wrapper img {
+    height: 35px;
+    left: 54px;
     position: absolute;
     top: 10px;
 }
+.brand-sidenav .logo-wrapper span.logo-text {
+    color: #ffffff;
+    font-size: 28px;
+    left: 86px;
+    padding-left: 12px;
+    position: absolute;
+    transition: opacity .2s linear;
+    visibility: visible;
 
-.name-menu-item{
-    margin-left: 24px
+    -webkit-transition: opacity .2s linear;
+    -moz-transition: opacity .2s linear;
+    -o-transition: opacity .2s linear;
+    opacity: 1;
 }
+
+.brand-sidenav .logo-wrapper a.navbar-toggler {
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.brand-sidenav .logo-wrapper a.navbar-toggler i {
+    font-size: 24px;
+    display: block;
+    color: #ffffff;
+}
+
+/* LA LISTA ORDENADA - MENU LATERAL */
+.sidenav {
+    top: 64px;
+    overflow: hidden;
+    width: inherit;
+    height: 100%;
+    -webkit-transition: auto !important;
+    -moz-transition: auto !important;
+    -o-transition: auto !important;
+    transition: auto !important;
+    border: none;
+    -webkit-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, .2);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* background-color: #eeeeee; */
+}
+
+.sidenav.sidenav-fixed {
+    position: fixed;
+    left: 0;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* Color de los ITEMS del sidenav */
+.collection a.collection-item {
+    color: #992e45;
+}
+.collection a.collection-item i {
+    color: #992e45;
+}
+
 
 .collection-item{
     position: relative;
 }
+
+.name-menu-item{
+    margin-left: 12px
+}
+
+
+/* .collection a.collection-item,  */
+.sidenav a.collection-item {
+    border-radius: 0 8px 8px 0;
+    margin-right: 16px;
+    padding: 10px 10px 10px 30px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+} 
+
+.sidenav li.active .fa-caret-down:before {
+    content: "\f0d8";
+}
+
+.sidenav li.active {
+    background-color: rgba(107, 32, 46, 0.09);
+}
+
+.sidenav li .collapsible-body {
+    background: transparent;
+}
+
+.collection .collection-item {
+    background: transparent;
+    border-bottom: none;
+}
+
+.collection .collection-item.active {
+    background: #992e45;
+    background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) ;
+    background: -webkit-linear-gradient(right, #992e45, #6b202e) ; 
+    /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) ; */
+    background:      -o-linear-gradient(right, #992e45, #6b202e) ;
+    background:         linear-gradient(-90deg, #992e45, #6b202e) ;
+    color: #ebe98e;
+}
+
+.collection .collection-item.active i {
+    color: #ebe98e;
+}
+
+.collapsible-header{
+    position: relative;
+}
+.i-right{
+    font-size: 16px !important;
+    position: absolute;    
+    right: 10px;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+/* FIN - SIDENAV */
+
 
 .upeu-garnet-text{
     color: #992e45;
@@ -26,16 +193,16 @@ body {
 .gradient-45upeu-dark
 {
       background: #992e45;
-      background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) !important;
-      background: -webkit-linear-gradient(right, #992e45, #6b202e) !important; 
-      /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) !important; */
-      background:      -o-linear-gradient(right, #992e45, #6b202e) !important;
-      background:         linear-gradient(-90deg, #992e45, #6b202e) !important;
+      background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) ;
+      background: -webkit-linear-gradient(right, #992e45, #6b202e) ; 
+      /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) ; */
+      background:      -o-linear-gradient(right, #992e45, #6b202e) ;
+      background:         linear-gradient(-90deg, #992e45, #6b202e) ;
 }
 .gradient-45upeu-dark.gradient-shadow
 {
-    -webkit-box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) !important;
-            box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) !important;
+    -webkit-box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) ;
+            box-shadow: 0 6px 20px 0 rgba(107, 32, 46, .5) ;
 }
 
 .logo-upeu-gpro{
@@ -81,10 +248,13 @@ body {
 .breadcrumb-page {
     background-color: transparent;
     box-shadow: none;
-    height: 32px;
-    line-height: 32px;
+    height: 24px;
+    line-height: 24px;
 }
 
+.breadcrumb-page  .breadcrumb {
+    font-size: 14px;
+}
 .breadcrumb-page a, .breadcrumb::before {
     color: #444 !important;
 }
@@ -103,6 +273,7 @@ body {
 .title-page h2{
     margin-top: 0;
     font-size: 38px;
+    margin-bottom: 12px
 }
 
 .card {
@@ -114,4 +285,70 @@ body {
 /* FORMULARIOS */
 .input-field{
     margin: 0;
+}
+
+#container-page{
+    padding-top: 16px;
+
+}
+#container-page.main-full {
+    padding-left: 0;
+}
+
+@media only screen and (min-width: 601px){
+    .brand-sidenav {
+        height: 64px;
+    }
+
+    .brand-sidenav .logo-wrapper {
+        line-height: 64px;
+    }
+
+    .brand-sidenav .logo-wrapper img {
+        top: 15px;
+        left: 8px;
+    }
+    .brand-sidenav .logo-wrapper span.logo-text {
+        left: 40px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .sidenav-main .sidenav {
+        top: 0;
+        width: 260px;
+    }
+
+    .sidenav-main .brand-sidenav {
+        padding-left: 40px;
+        background: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .brand-sidenav {
+        height: 56px;
+    }
+}
+
+@media only screen and (min-width: 993px){
+    #container-page {
+        padding-left: 260px;
+    }
+
+    #container-page.main-full {
+        padding-left: 64px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    
+    #container-page{
+        padding-top: 24px 32px;
+    
+    }
+    .container-page{
+        padding: 0 32px;
+    }
+
 }
