@@ -1,7 +1,7 @@
 <aside class="sidenav-main">
-    <div class="brand-sidenav gradient-45upeu-dark">
+    <div class="brand-sidenav gradient-45upeu-dark ">
         <h1 class="logo-wrapper">
-            <a class="navbar-toggler sidenav-trigger show-on-medium-and-down hide-on-large-only" data-target="slide-out">
+            <a class="navbar-toggler z-depth-4 show-on-medium-and-down hide-on-large-only sidenav-trigger " data-target="slide-out">
                 <i class="material-icons">menu</i>
             </a>
             <img src="../../../assets/img/logos/logo-upeu-blanco.png" alt="UPeU logo" >
@@ -11,52 +11,30 @@
             </a>
         </h1>
     </div>
-    <ul id="slide-out" class="sidenav sidenav-fixed sidenav-collapsible collapsible upeu-garnet-text" materialize="Sidenav">
-
-        <!-- <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-                <li routerLinkActive="active">
-                <a class="collapsible-header bold">Proyectos<i class="fa fa-folder-open"></i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a routerLink="nuevo-proyecto"  routerLinkActive="active" >
-                                    <i class="fa fa-plus"></i>
-                                    First 
-                                </a>  
-                            </li>
-                            <li><a href="#">Second</a></li>
-                            <li><a href="#">Third</a></li>
-                            <li><a href="#">Fourth</a></li>
-                        </ul>                
-                    </div>
-                </li>
-            </ul>
-        </li> -->
-        
+    <ul id="slide-out" class="sidenav  sidenav-fixed sidenav-collapsible collapsible upeu-garnet-text color-white-992" materialize="Sidenav" [materializeParams]="[{dismissible: false}]">        
         <li routerLinkActive="active">
             <div class="collapsible-header bold" >
-                <i class="fa fa-folder-open"></i>
+                <i class="fa fa-folder-open-o"></i>
                 Proyectos
-                <i class="fa fa-caret-down i-right"></i>
+                <i class="fa fa-angle-down i-right"></i>
 
             </div>
                 
             <div class="body-menu-link collapsible-body">
                 <ul class="collection">
-                    <a routerLink="nuevo-proyecto"  routerLinkActive="active" class="collection-item " >
+                    <a routerLink="nuevo-proyecto"  routerLinkActive="active" class="collection-item sidenav-close " >
                         <i class="fa fa-plus"></i>
                         <span class="name-menu-item">Nuevo Proyecto</span>              
                     </a>
-                    <a href="#!" class="collection-item">
-                        <i class="fa fa-folder"></i>
+                    <a href="#!" class="collection-item sidenav-close">
+                        <i class="fa fa-folder-o"></i>
                     <span class="name-menu-item">Mis Proyecto</span>  
                     </a>
-                    <a href="#!" class="collection-item">
+                    <a href="#!" class="collection-item sidenav-close">
                         <i class="fa fa-gavel"></i>
                         <span class="name-menu-item">Aprobar Proyecto</span>  
                     </a>
-                    <a href="#!" class="collection-item">
+                    <a href="#!" class="collection-item sidenav-close">
                         <i class="fa fa-archive"></i>
                         <span class="name-menu-item">Archivados</span>  
                     </a>
@@ -67,23 +45,23 @@
             <div class="collapsible-header bold">
                 <i class="fa fa-sitemap"></i>
                 Areas
-                <i class="fa fa-caret-down i-right"></i>
+                <i class="fa fa-angle-down i-right"></i>
             </div>
             <div class="body-menu-link  collapsible-body">
             <ul class="collection">
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-plus"></i>
                     <span class="name-menu-item">Nueva Area</span>              
                 </a>
-                <a routerLink="ver-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="ver-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-file-text-o"></i>
                     <span class="name-menu-item">Ver Área</span>              
                 </a>
-                <a routerLink="ppto-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="ppto-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-money"></i>
                     <span class="name-menu-item">PPTO Area</span>              
                 </a>
-                <a routerLink="responsables-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="responsables-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-users"></i>
                     <span class="name-menu-item">Responsables</span>              
                 </a>
@@ -94,23 +72,23 @@
             <div class="collapsible-header bold">
                 <i class="fa fa-bar-chart"></i>
                 Reportes
-                <i class="fa fa-caret-down i-right"></i>
+                <i class="fa fa-angle-down i-right"></i>
             </div>
             <div class="body-menu-link  collapsible-body">
             <ul class="collection">
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Reporte 1</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Reporte 2</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Reporte 3</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Reporte 4</span>              
                 </a>
@@ -122,23 +100,23 @@
             <div class="collapsible-header bold">
                 <i class="fa fa-cogs"></i>
                 Configuraciones
-                <i class="fa fa-caret-down i-right"></i>
+                <i class="fa fa-angle-down i-right"></i>
             </div>
             <div class="body-menu-link  collapsible-body">
             <ul class="collection">
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Configuración 1</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Configuración 2</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Configuración 3</span>              
                 </a>
-                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item" >
+                <a routerLink="nueva-area"  routerLinkActive="active" class="collection-item sidenav-close" >
                     <i class="fa fa-circle-o"></i>
                     <span class="name-menu-item">Configuración 4</span>              
                 </a>

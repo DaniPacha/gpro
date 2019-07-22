@@ -2,6 +2,88 @@ body {
     background-color: #ffffff;
 }
 
+/* HEADER */
+.navbar .header-search-wrapper {
+    position: relative;
+    display: inline-block;
+    width: -webkit-calc(100% - 600px);
+    width: -moz-calc(100% - 600px);
+    width: calc(100% - 600px);
+    height: 40px;
+    margin: 10px auto 0 285px;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.navbar .header-search-wrapper i {
+    font-size: 24px;
+    line-height: 32px !important;
+    position: absolute;
+    top: 6px;
+    left: 24px;
+    -webkit-transition: color 200ms ease;
+    -moz-transition: color 200ms ease;
+    -o-transition: color 200ms ease;
+    transition: color 200ms ease;
+}
+
+.navbar .navbar-dark .header-search-wrapper i {
+    color: #fff;
+}
+
+.navbar input.header-search-input {
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    width: 87%;
+    height: 24px;
+    padding: 8px 8px 8px 72px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.navbar .navbar-dark .header-search-wrapper input.header-search-input {
+    color: #fff;
+    border: 1px solid rgba(230, 230, 230, .05);
+    background: rgba(230, 230, 230, .3);
+}
+
+.navbar .navbar-dark .header-search-wrapper input.header-search-input:hover,
+.navbar .navbar-dark .header-search-wrapper input.header-search-input:active,
+.navbar .navbar-dark .header-search-wrapper input.header-search-input:focus 
+{
+    border: 1px solid rgba(230, 230, 230, .1);
+    background: rgba(230, 230, 230, .1);
+    box-shadow: none !important;
+}
+
+.perfil-wrapper {
+    line-height: 30px;
+}
+
+.perfil-wrapper img {
+    border-radius: 50%;
+    height: 36px;
+    margin-top: 10px;
+}
+
+
+
+/* FIN DE HEADER */
+
 /* SIDENAV */
 .sidenav-main {
     position: fixed;
@@ -37,27 +119,17 @@ body {
     white-space: nowrap;
 }
 
-/* .brand-sidenav .brand-logo {
-    line-height:
-    font-size: 32px; 0;
-    position: absolute;
-    display: inline-block;
-    margin: 1px 0;
-    padding: 0px 12px;
-    color: #ffff;
-} */
-
 .brand-sidenav .logo-wrapper img {
-    height: 35px;
+    height: 28px;
     left: 54px;
     position: absolute;
-    top: 10px;
+    top: 14px;
 }
 .brand-sidenav .logo-wrapper span.logo-text {
     color: #ffffff;
     font-size: 28px;
-    left: 86px;
-    padding-left: 12px;
+    left: 80px;
+    padding-left: 8px;
     position: absolute;
     transition: opacity .2s linear;
     visibility: visible;
@@ -69,11 +141,12 @@ body {
 }
 
 .brand-sidenav .logo-wrapper a.navbar-toggler {
-    position: absolute;
-    top: 7px;
-    left: 4px;
-    padding: 8px;
+    border-radius: 50px;
     cursor: pointer;
+    left: 8px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
 }
 
 .brand-sidenav .logo-wrapper a.navbar-toggler i {
@@ -98,7 +171,6 @@ body {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-    /* background-color: #eeeeee; */
 }
 
 .sidenav.sidenav-fixed {
@@ -119,6 +191,10 @@ body {
     color: #992e45;
 }
 
+.sidenav .active .collapsible-header,
+.sidenav.fixed .active .collapsible-header {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 
 .collection-item{
     position: relative;
@@ -131,7 +207,7 @@ body {
 
 /* .collection a.collection-item,  */
 .sidenav a.collection-item {
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 12px 12px 0;
     margin-right: 16px;
     padding: 10px 10px 10px 30px;
     -webkit-transition: none;
@@ -140,8 +216,8 @@ body {
     transition: none;
 } 
 
-.sidenav li.active .fa-caret-down:before {
-    content: "\f0d8";
+.sidenav li.active .fa-angle-down:before {
+    content: "\f106";
 }
 
 .sidenav li.active {
@@ -155,6 +231,10 @@ body {
 .collection .collection-item {
     background: transparent;
     border-bottom: none;
+}
+
+.collection a.collection-item:not(.active):hover {
+    background-color: rgba(233, 230, 88, 0.5);
 }
 
 .collection .collection-item.active {
@@ -174,8 +254,10 @@ body {
 .collapsible-header{
     position: relative;
 }
+
 .i-right{
     font-size: 16px !important;
+    margin: 0 !important;
     position: absolute;    
     right: 10px;
     -webkit-transition: .3s ease all;
@@ -305,18 +387,42 @@ body {
     }
 
     .brand-sidenav .logo-wrapper img {
-        top: 15px;
-        left: 8px;
+        top: 18px;
     }
-    .brand-sidenav .logo-wrapper span.logo-text {
-        left: 40px;
+
+    .brand-sidenav .logo-wrapper a.navbar-toggler {
+        top: 14px;
     }
+
+    .perfil-wrapper {
+        line-height: 40px
+    }
+    .perfil-wrapper img {
+        margin-top: 14px;
+    }
+    
 }
 
 @media only screen and (max-width: 992px){
+    .sidenav-main {
+        height: 0px;
+    }
     .sidenav-main .sidenav {
         top: 0;
         width: 260px;
+        transform: translateX(-105%);
+        background-color: rgba(0, 0, 0, .85); /* prueba de backgorund para sidenav menor de 992px; comentar para dejar en normalidad */
+    }
+
+    .color-white-992 {
+        color: #ececec; /* prueba de color para sidenav menor a 992px; comentar para dejar en normalidad */
+    }
+
+    .collection a.collection-item {
+        color: #ebe98e; /* prueba de color para sidenav menor a 992px; comentar para dejar en normalidad */
+    }
+    .collection a.collection-item i {
+        color: #ebe98e; /* prueba de color para sidenav menor a 992px; comentar para dejar en normalidad */
     }
 
     .sidenav-main .brand-sidenav {
@@ -326,9 +432,7 @@ body {
         box-shadow: none;
     }
 
-    .brand-sidenav {
-        height: 56px;
-    }
+    
 }
 
 @media only screen and (min-width: 993px){
@@ -338,6 +442,15 @@ body {
 
     #container-page.main-full {
         padding-left: 64px;
+    }
+
+    .brand-sidenav .logo-wrapper img {
+        top: 15px;
+        left: 8px;
+        height: 36px;
+    }
+    .brand-sidenav .logo-wrapper span.logo-text {
+        left: 40px;
     }
 }
 
