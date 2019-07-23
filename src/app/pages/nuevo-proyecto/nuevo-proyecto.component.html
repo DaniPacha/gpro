@@ -33,9 +33,9 @@
                 <div class="col s12 m12 l12">
                     <div id="Form-advance" class="card z-depth-3">
                         <div class="card-content">
-                            <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto( )"  >
+                            <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto()"  >
                                 <div class="row">
-                                    <div class="input-field input-bordered col l8 s12">
+                                    <div class="input-field bordered col l8 s12">
                                         <input id="nombre_proyecto" type="text" 
                                             formControlName="nombre_proyecto"
                                             [ngClass]="{'has-error': fProyecto.get('nombre_proyecto').invalid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine, 
@@ -45,7 +45,7 @@
                                         <label for="nombre_proyecto">Nombre del proyecto</label> 
                                     </div>
 
-                                    <div class="input-field input-bordered col l4 s12">
+                                    <div class="input-field bordered col l4 s12">
                                         <input id="nombre_corto" type="text" 
                                             formControlName="nombre_corto"
                                             [ngClass]="{'has-error': fProyecto.get('nombre_corto').invalid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine, 
@@ -61,7 +61,7 @@
                                 </div>                                
 
                                 <div class="row">
-                                    <div class="input-field input-bordered col l8 s12">
+                                    <div class="input-field bordered col l8 s12">
                                         <textarea id="descripcion_proyecto" class="materialize-textarea"  
                                             formControlName="descripcion_proyecto"
                                             [ngClass]="{'has-error': fProyecto.get('descripcion_proyecto').invalid && fProyecto.get('descripcion_proyecto').touched && !fProyecto.get('descripcion_proyecto').pristine, 
@@ -72,7 +72,7 @@
                                         <label for="descripcion_proyecto">Descripción</label>
                                     </div>     
 
-                                    <div class="input-field input-bordered col l4 s12"
+                                    <div class="input-field bordered col l4 s12"
                                     [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
                                                 'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
                                     >
@@ -93,17 +93,25 @@
                                 </div>   
                                 
                                 <div class="row">
-                                    <div class="input-field input-bordered col s12">
+                                    <div class="file-field input-field bordered col s12">
                                         <input id="foto_proyecto" type="text"
                                             formControlName="foto_proyecto"
                                         >                                        
                                         <label for="foto_proyecto">Foto Proyecto</label>
                                         <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
+
+                                        <!-- <div class="btn upeu-garnet">
+                                            <span>File</span>
+                                            <input type="file" multiple>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                                        </div> -->
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="input-field input-bordered col m6 s12">
+                                    <div class="input-field bordered col m6 s12">
                                         <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
                                             materialize="Datepicker"
                                             [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true}]"
@@ -115,7 +123,7 @@
                                         <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
                                     </div>
 
-                                    <div class="input-field input-bordered col m6 s12">
+                                    <div class="input-field bordered col m6 s12">
                                         <input type="text" class="datepicker" id="fecha_fin_proyecto"
                                             materialize="Datepicker"
                                         [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true, minDate: (fProyecto.get('fecha_inicio_proyecto').value)}]"
@@ -130,17 +138,11 @@
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <button class="btn upeu waves-effect waves-light right" type="submit" name="action" [disabled]="fProyecto.invalid" >
+                                        <button class="btn upeu-garnet waves-effect waves-light right" type="submit" name="action" [disabled]="fProyecto.invalid" >
                                             Siguiente <i class="material-icons right">send</i>
                                         </button>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
-                                    <div class="clo s12">
-
-                                            {{fProyecto.valid}}
-                                    </div>
-                                </div> -->
 
                             </form>
                         </div>
@@ -148,33 +150,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Bottom Flotante  -->
-        <!-- <div style="bottom: 50px; right: 19px;" class="fixed-action-btn direction-top">
-            <a class="btn-floating btn-large gradient-45upeu-dark gradient-shadow"><i class="material-icons">add</i></a>
-            <ul>
-                <li>
-                    <a href="css-helpers.html" class="btn-floating blue">
-                        <i class="material-icons">help_outline</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="cards-extended.html" class="btn-floating green">
-                        <i class="material-icons">widgets</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="app-calendar.html" class="btn-floating amber">
-                        <i class="material-icons">today</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="app-email.html" class="btn-floating red">
-                        <i class="material-icons">mail_outline</i>
-                    </a>
-                </li>
-            </ul>
-        </div> -->
-        <!-- Fin de Bottom Flotante -->
+
     </div>
 </div>

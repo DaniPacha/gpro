@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ProyectoService } from '../../services/proyecto.service';
 
 @Component({
   selector: 'app-nuevo-proyecto',
@@ -20,9 +21,9 @@ export class NuevoProyectoComponent implements OnInit {
     fecha_fin_proyecto: '',
   };
 
-  constructor() {
+  constructor( private sProyecto: ProyectoService) {
     this.fProyecto = new FormGroup({
-      nombre_proyecto:        new FormControl('', [Validators.required, Validators.minLength(16)]),
+      nombre_proyecto:        new FormControl('', [Validators.required, Validators.minLength(14)]),
       nombre_corto:           new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
       descripcion_proyecto:   new FormControl('', [Validators.required, Validators.minLength(24)]),
       tipo_proyecto:          new FormControl('', [Validators.required]),
@@ -35,9 +36,17 @@ export class NuevoProyectoComponent implements OnInit {
   ngOnInit() {}
 
   guardarProyecto() {
-    console.log(this.fProyecto.value);
-    console.log(this.fProyecto);
-    console.log(this.fProyecto.get('nombre_proyecto').invalid);
+    if ( this.fProyecto.invalid ) {
+      console.log('error en Formulario');
+      return;
+
+    } else {
+      console.log('antes de llamar al servicio');
+      this.sProyecto.proyectoCreate( this.fProyecto.value ).
+        subscribe( resp => {
+          console.log(resp);
+        });
+    }
 
     // this.resetear();
   }
