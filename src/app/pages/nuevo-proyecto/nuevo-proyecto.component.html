@@ -114,7 +114,7 @@
                                     <div class="input-field bordered col m6 s12">
                                         <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
                                             materialize="Datepicker"
-                                            [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true}]"
+                                            [materializeParams]="[settingDatePicker]"
                                             formControlName="fecha_inicio_proyecto"
                                             [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
                                                     'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
@@ -126,7 +126,7 @@
                                     <div class="input-field bordered col m6 s12">
                                         <input type="text" class="datepicker" id="fecha_fin_proyecto"
                                             materialize="Datepicker"
-                                        [materializeParams]="[{autoClose: true, format: 'dd/mm/yyyy', showClearBtn: true, minDate: (fProyecto.get('fecha_inicio_proyecto').value)}]"
+                                        [materializeParams]="[settingDatePicker]"
                                             formControlName="fecha_fin_proyecto"
                                             [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
                                                     'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"

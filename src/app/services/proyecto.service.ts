@@ -1,33 +1,47 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { Global } from '../global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
 
+  public url: string;
 
-
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient ) { 
+    this.url = Global.url;
+  }
 
   proyectoCreate(fProyecto: any) {
 
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        // 'Authorization': 'my-auth-token'
-      })
-    };
+    return this.http.get(
+      this.url + 'proyectos/proyecto_crear.jsp' ,
+      {params: fProyecto}
+    );
+  }
 
-    console.log(fProyecto);
-    return this.http.post(
-      'http://pachamora.develop/academico/gpro-api/v1/proyectos/proyecto_crear.jsp' ,
-      fProyecto,
-      httpOptions
+  proyectoUpdate(fProyecto: any) {
+    return this.http.get(
+      this.url + 'proyectos/proyecto_crear.jsp' ,
+      {params: fProyecto}
+    );
+  }
+
+  proyectoDelete(fProyecto: any) {
+    return this.http.get(
+      this.url + 'proyectos/proyecto_crear.jsp' ,
+      {params: fProyecto}
     );
   }
 
 
+  proyectoRead(fProyecto: any) {
+    return this.http.get(
+      this.url + 'proyectos/proyecto_crear.jsp' ,
+      {params: fProyecto}
+    );
+  }
 
 }
 

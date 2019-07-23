@@ -193,7 +193,7 @@ body {
 
 .sidenav .active .collapsible-header,
 .sidenav.fixed .active .collapsible-header {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(107, 32, 46, 0.09);
 }
 
 .collection-item{
@@ -221,7 +221,8 @@ body {
 }
 
 .sidenav li.active {
-    background-color: rgba(107, 32, 46, 0.09);
+    /* background-color: rgba(107, 32, 46, 0.09); */
+    background-color: transparent;
 }
 
 .sidenav li .collapsible-body {
@@ -234,7 +235,7 @@ body {
 }
 
 .collection a.collection-item:not(.active):hover {
-    background-color: rgba(233, 230, 88, 0.5);
+    background-color: rgba(233, 204, 98, 0.5);
 }
 
 .collection .collection-item.active {
@@ -568,7 +569,7 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 }
 
 
-/* Colr de Validaciones */
+/* Color de Validaciones */
 .has-validated-text {
     color: green !important;
 }
@@ -585,6 +586,37 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 
 /* FIN FORMULARIOS AJUSTES */
 
+
+/* DATEPICKER */
+
+/* // color del Data picker... */
+.datepicker-date-display {
+    background-color: #992f46
+}
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    padding: 0 1rem;
+    color: #992f46;
+}
+.datepicker-day-button:focus,
+.datepicker-day-button:hover {
+    background-color: rgba(233, 204, 98, 0.5);
+}
+
+.datepicker-table td.is-selected {
+    color: #fff !important;
+    background-color: #992f46;
+}
+.datepicker-table td.is-today {
+    color:  rgba(153, 47, 70, 0.5);
+}
+.month-prev:hover,
+.month-prev:focus,
+.month-next:hover,
+.month-next:focus {
+    background-color: rgba(153, 47, 70, 0.5);
+}
+
+/* FIN DATE PICKER */
 
 
 .upeu-garnet-text{

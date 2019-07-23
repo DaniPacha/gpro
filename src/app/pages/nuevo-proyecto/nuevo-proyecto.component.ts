@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProyectoService } from '../../services/proyecto.service';
+import { Global } from '../../global';
 
 @Component({
   selector: 'app-nuevo-proyecto',
   templateUrl: './nuevo-proyecto.component.html',
   styleUrls: ['./nuevo-proyecto.component.css']
 })
+
+
 export class NuevoProyectoComponent implements OnInit {
 
+  settingDatePicker: any;
   fProyecto: FormGroup;
 
   proyectoBlanco = {
@@ -22,6 +26,7 @@ export class NuevoProyectoComponent implements OnInit {
   };
 
   constructor( private sProyecto: ProyectoService) {
+    this.settingDatePicker = Global.settingDatePicker;
     this.fProyecto = new FormGroup({
       nombre_proyecto:        new FormControl('', [Validators.required, Validators.minLength(14)]),
       nombre_corto:           new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
