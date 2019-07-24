@@ -1,63 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
 import { ProyectoService } from '../../services/proyecto.service';
-import { Global } from '../../global';
 
 @Component({
-  selector: 'app-nuevo-proyecto',
-  templateUrl: './nuevo-proyecto.component.html',
-  styleUrls: ['./nuevo-proyecto.component.css']
+  selector: 'app-pendientes',
+  templateUrl: './pendientes.component.html',
+  styleUrls: ['./pendientes.component.css']
 })
-
-
 export class NuevoProyectoComponent implements OnInit {
 
-  settingDatePicker: any;
-  fProyecto: FormGroup;
+  proyectos: any[] = [];
+  loading: boolean;
 
-  proyectoBlanco = {
-    nombre_proyecto: '',
-    nombre_corto: '',
-    descripcion_proyecto: '',
-    tipo_proyecto: '',
-    foto_proyecto: '',
-    fecha_inicio_proyecto: '',
-    fecha_fin_proyecto: '',
-  };
+  constructor( private router: Router, private sProyecto: ProyectoService ) {
 
-  constructor( private sProyecto: ProyectoService) {
-    this.settingDatePicker = Global.settingDatePicker;
-    this.fProyecto = new FormGroup({
-      nombre_proyecto:        new FormControl('', [Validators.required, Validators.minLength(14)]),
-      nombre_corto:           new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
-      descripcion_proyecto:   new FormControl('', [Validators.required, Validators.minLength(24)]),
-      tipo_proyecto:          new FormControl('', [Validators.required]),
-      foto_proyecto:          new FormControl('', ),
-      fecha_inicio_proyecto:  new FormControl('', [Validators.required]),
-      fecha_fin_proyecto:     new FormControl('', [Validators.required])
-    });
-  }
+    this.loading = true;
+    this.sProyecto.proyectosPendientes()
+        .subscribe( (data: any) => {
+          this.loading = false;
+          this.proyectos = data.data;
 
-  ngOnInit() {}
-
-  guardarProyecto() {
-    if ( this.fProyecto.invalid ) {
-      console.log('error en Formulario');
-      return;
-
-    } else {
-      console.log('antes de llamar al servicio');
-      this.sProyecto.proyectoCreate( this.fProyecto.value ).
-        subscribe( resp => {
-          console.log(resp);
         });
-    }
-
-    // this.resetear();
   }
 
-  // Resetear Datos:
-  resetear() {
-    this.fProyecto.reset(this.proyectoBlanco);
+  ngOnInit() {
   }
+
 }

@@ -713,7 +713,12 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     overflow: hidden;
     margin: 1rem 0 .5rem 0;
 }
+/* FIN DE TITULO  DE CADA PAGINA */
 
+
+.show {
+    display: block !important;
+}
 
 #container-page{
     padding-top: 16px;

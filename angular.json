@@ -25,7 +25,8 @@
             ],
             "styles": [
               "node_modules/materialize-css/dist/css/materialize.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/animate.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -91,7 +92,8 @@
             ],
             "styles": [
               "node_modules/materialize-css/dist/css/materialize.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/animate.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

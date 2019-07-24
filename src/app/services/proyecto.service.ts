@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Global } from '../global';
 
 @Injectable({
@@ -9,15 +9,14 @@ export class ProyectoService {
 
   public url: string;
 
-  constructor( private http: HttpClient ) { 
+  constructor( private http: HttpClient ) {
     this.url = Global.url;
   }
 
   proyectoCreate(fProyecto: any) {
-
     return this.http.get(
       this.url + 'proyectos/proyecto_crear.jsp' ,
-      {params: fProyecto}
+      {params: fProyecto},
     );
   }
 
@@ -41,6 +40,11 @@ export class ProyectoService {
       this.url + 'proyectos/proyecto_crear.jsp' ,
       {params: fProyecto}
     );
+  }
+
+
+  proyectosPendientes() {
+    return this.http.get( this.url + 'proyectos/proyectos.jsp?estado=pendientes' );
   }
 
 }

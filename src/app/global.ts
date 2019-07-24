@@ -54,9 +54,14 @@ export let Global = {
                 'Vie',
                 'Sáb'
             ],
-            weekdaysAbbrev: [ 'D', 'L', 'Ma', 'Mi', 'J', 'V', 'S' ]
+            weekdaysAbbrev: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ]
 
 
         }
-    }
+    },
+    stringToDate (fechaString: string) {
+        const myDate: any = fechaString.split('/');
+        return new Date(myDate[2], myDate[1] - 1, myDate[0]);
+    },
+    anioActual: new Date().getFullYear(),
 };
