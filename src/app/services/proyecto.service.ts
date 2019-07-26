@@ -44,7 +44,7 @@ export class ProyectoService {
 
 
   proyectosPendientes() {
-    return this.http.get( this.url + 'proyectos/proyectos.jsp?estado=pendientes' );
+    return this.http.get( this.url + 'proyectos/proyectos.jsp?estado=elaboracion' );
   }
 
 }

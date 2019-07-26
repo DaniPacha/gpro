@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProyectoService } from '../../services/proyecto.service';
+import { Router } from '@angular/router';
 import { Global } from '../../global';
 
 @Component({
   selector: 'app-crear-proyecto',
-  templateUrl: './crear-prouecto.component.html',
+  templateUrl: './crear-proyecto.component.html',
   styleUrls: ['./crear-proyecto.component.css']
 })
 
 
-export class NuevoComponent implements OnInit {
+export class CrearProyectoComponent implements OnInit {
 
   settingDatePicker: any;
   fProyecto: FormGroup;
@@ -25,7 +26,7 @@ export class NuevoComponent implements OnInit {
     // fecha_fin_proyecto: '',
   };
 
-  constructor( private sProyecto: ProyectoService) {
+  constructor( private sProyecto: ProyectoService, private router: Router) {
     this.settingDatePicker = Global.settingDatePicker;
     this.fProyecto = new FormGroup({
       nombre_proyecto:        new FormControl('', [Validators.required, Validators.minLength(14)]),
@@ -49,8 +50,14 @@ export class NuevoComponent implements OnInit {
     } else {
       console.log('antes de llamar al servicio');
       this.sProyecto.proyectoCreate( this.fProyecto.value ).
-        subscribe( resp => {
-          console.log(resp);
+        subscribe( (data: any) => {
+          console.log(data);
+          if( data.status ==  200 ) {
+            this.router.navigate(['nuevo-proyecto/detalle-proyecto', data.data.id]);
+          } else {
+            console.log( data.message );
+          }
+
         });
     }
 

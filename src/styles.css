@@ -274,6 +274,7 @@ body {
 
 .input-field.bordered{
     margin-top: 0px;
+    margin-bottom: 16px;
 }
 
 .input-field{
@@ -677,6 +678,21 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     padding: 0 16PX;
 }
 
+
+/* PROLOADER DE CADA PAGE */
+
+.progress {
+    position: absolute;
+    background-color: #ebe98e ;
+    top: 49px;
+}
+.progress .indeterminate {
+    background-color: #992e45;
+}
+
+
+/* FIN PROLOADER DE CADA PAGE */
+
 /* BREADCRUMB DE CADA PAGINA */
 .breadcrumb-page {
     background-color: transparent;
@@ -759,6 +775,10 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     }
     .perfil-wrapper img {
         margin-top: 14px;
+    }
+
+    .progress {
+        top: 56px;
     }
     
 }

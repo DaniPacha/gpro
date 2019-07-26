@@ -17,15 +17,16 @@ import { ChartsModule } from 'ng2-charts';
 
 
 
-import { NuevoProyectoComponent } from './pages/nuevo-proyecto/nuevo-proyecto.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SidnavComponent } from './shared/sidnav/sidnav.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { NuevoProyectoComponent } from './pages/nuevo-proyecto/nuevo-proyecto.component';
+
+import { CrearProyectoComponent } from './pages/nuevo-proyecto/crear-proyecto.component';
 import { PendientesComponent } from './pages/nuevo-proyecto/pendientes.component';
 import { NuevaActividadComponent } from './pages/nuevo-proyecto/nueva-actividad.component';
 import { DetalleProyectoComponent } from './pages/nuevo-proyecto/detalle-proyecto.component';
 import { DetalleActividadComponent } from './pages/nuevo-proyecto/detalle-actividad.component';
-import { NuevoComponent } from './pages/nuevo-proyecto/crear-proyecto.component';
 
 
 
@@ -40,7 +41,7 @@ import { NuevoComponent } from './pages/nuevo-proyecto/crear-proyecto.component'
     DetalleProyectoComponent,
     NuevaActividadComponent,
     DetalleActividadComponent,
-    NuevoComponent,
+    CrearProyectoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,80 @@
-<p>pendientes works!</p>
+<div class="page progress" *ngIf="loading">
+    <div class="indeterminate"></div>
+</div>
+
+<div class="animated fadeIn">
+
+    <div class="col s12 ">    
+        <div class="pb-0 " id="">
+            <!-- Search for small screen-->
+            <div class="container-page">
+                <div class="row ">
+                    <div class="col s12">
+                        <div class="title-page ">
+                            <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
+                                Proyectos Pendientes <i class="fa fa-circle-o-notch  fa-spin" style="font-size: 0.7em"></i>                                    
+                            </h2>
+                            <nav class="breadcrumb-page">
+                                <div class="nav-wrapper">
+                                    <div class="col s12">
+                                        <a class="breadcrumb" >Proyectos</a>
+                                        <a class="breadcrumb" >Nuevo Proyecto</a>
+                                        <span class="breadcrumb" disabled>Pendientes</span>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 animated fadeIn ">
+        <div class="container-page">
+            <div id="cards-extended">
+
+                <!--E-commerce Card-->
+                <div id="image-card" class="section">           
+                    <div class="row">
+                        <div class="col s12 m4 animate fadeIn" *ngFor="let proyecto of proyectos" >
+                            <a class="pointer">
+                                <div class="card  card-width _grey _darken-4 _gradient-45upeu-dark  _gradient-45upeu-plata-amarillo  " >
+                                    <div class="card-content _white-text">
+                                        <span class="badge gradient-shadow mt-1 mr-1 br-3 {{ proyecto.class_tipo_proyecto }}">{{ proyecto.tipo_proyecto }}</span>
+                                        <span class="truncate card-title font-weight-700 mb-3 " style="font-size: 24px" data-position="bottom" data-tooltip=""  >{{ proyecto.proyecto }}   </span>
+                                        <p style="font-size: 1.2em;" class=" truncate">
+                                            <span><i>{{ proyecto.proyecto_corto }}</i></span> 
+                                            <span class="ml-5 upeu-amarillo-text">
+                                                <b>{{ proyecto.fechas }}</b>
+                                            </span> 
+                                            <span class="ml-5" >
+                                                <b>{{ proyecto.num_actividades }}</b> Actividades
+                                            </span>
+                                        </p>
+                                        <p class="truncate p-descripcion">{{ proyecto.descripcion }}</p>
+                                        <p class="truncate">   <span class="chip chip-area" *ngFor="let eje of proyecto.ejes "> {{eje.eje_name}} </span> </p>
+                                        <p class="truncate"></p>
+                                        <p class="truncate">
+                                            <span class="chip " *ngFor="let area of proyecto.areas "> {{area.area_name}} </span>
+                                        </p>
+                                        <div class="border-non mt-5">
+                                            <a class="waves-effect waves-light btn btn-ppto upeu-amarillo upeu-text border-round box-shadow mr-1" *ngIf=" proyecto.autofinanciado != '0.00' &&  proyecto.presupuesto != '0.00'  ">S/ {{ proyecto.presupuesto }}</a>
+                                            <a class="waves-effect waves-light btn btn-ppto btn-ppto-auto border-round box-shadow mr-1" *ngIf=" proyecto.autofinanciado != '0.00' ">S/ {{ proyecto.autofinanciado }}</a>
+                                            <a class="waves-effect waves-light btn btn-ppto upeu upeu-amarillo-text border-round box-shadow " *ngIf=" proyecto.presupuesto != '0.00' " >S/ {{ proyecto.ppto_total }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+</div>
