@@ -8,7 +8,7 @@
                     <div class="col s12">
                         <div class="title-page ">
                             <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
-                                Nuevo Proyectodsdads <i class="material-icons">create</i>                                    
+                                Nuevo Proyecto <i class="material-icons">create</i>                                    
                             </h2>
                             <nav class="breadcrumb-page">
                                 <div class="nav-wrapper">
@@ -28,154 +28,158 @@
     
     <div class="col s12  ">
         <div class="container-page">
-            <div class="seaction">
+            <div class="section">
     
                 <div class="row">       
+                    
+                    <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto()"  >
+                        <div class="row">
+                            <div class="input-field bordered col l8 s12">
+                                <input id="nombre_proyecto" type="text" 
+                                    formControlName="nombre_proyecto"
+                                    materialize="CharacterCounter"
+                                    [ngClass]="{'has-error': fProyecto.get('nombre_proyecto').invalid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine, 
+                                                'has-validated': fProyecto.get('nombre_proyecto').valid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine }"
+                                    data-length="120"
+                                >
+                                <label for="nombre_proyecto">Nombre del proyecto</label> 
+                            </div>
+
+                            <div class="input-field bordered col l4 s12">
+                                <input id="nombre_corto" type="text" 
+                                    formControlName="nombre_corto"
+                                    materialize="CharacterCounter"
+                                    [ngClass]="{'has-error': fProyecto.get('nombre_corto').invalid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine, 
+                                                'has-validated': fProyecto.get('nombre_corto').valid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine }"
+                                    data-length="20"
+                                >
+                                <label for="nombre_corto">Nombre corto</label>
+                                <!-- <span *ngIf=" nombre_corto.errors?.minlength " class="helper-text animated fadeIn" >
+                                    Tiene que tener entre 5 y 18 caracteres
+                                </span>-->
+
+                            </div>
+                        </div>                                
+
+                        <div class="row">
+                            <div class="input-field bordered col l8 s12">
+                                <textarea id="descripcion_proyecto" class="materialize-textarea"  
+                                    formControlName="descripcion_proyecto"
+                                    materialize="CharacterCounter"
+                                    [ngClass]="{'has-error': fProyecto.get('descripcion_proyecto').invalid  && !fProyecto.get('descripcion_proyecto').pristine, 
+                                                'has-validated': fProyecto.get('descripcion_proyecto').valid  && !fProyecto.get('descripcion_proyecto').pristine }"
+                                    data-length="300"
+                                >
+                                </textarea>
+                                <label for="descripcion_proyecto">Descripción</label>
+                            </div>     
+
+                            <div class="input-field bordered col l4 s12"
+                            [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
+                                        'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                            >
+                                <select formControlName="tipo_proyecto" materialize="FormSelect" >
+                                    <option value="" disabled selected>Elige un tipo</option>
+                                    <option value="1">Académico</option>
+                                    <option value="2">Investigación</option>
+                                    <option value="3">Social</option>
+                                    <option value="4">Espiritual</option>
+                                    <option value="5">Vinculación con el Medio</option>
+                                </select>
+                                <label
+                                [ngClass]="{'has-error-text': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
+                                            'has-validated-text': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                                >Tipo de Proyecto</label>
+                                <span 
+                                    [ngClass]="{'show': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine}"
+                                    class="helper-text hide" data-error="wrong" data-success="right"
+                                >
+                                tiene que elegir un tipo</span>
+                            </div>                           
+                        </div>   
                         
-                    <div class="col s12 m12 l12">
-                        <div id="Form-advance" class="card z-depth-3">
-                            <div class="card-content">
-                                <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto()"  >
-                                    <div class="row">
-                                        <div class="input-field bordered col l8 s12">
-                                            <input id="nombre_proyecto" type="text" 
-                                                formControlName="nombre_proyecto"
-                                                materialize="CharacterCounter"
-                                                [ngClass]="{'has-error': fProyecto.get('nombre_proyecto').invalid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine, 
-                                                            'has-validated': fProyecto.get('nombre_proyecto').valid && fProyecto.get('nombre_proyecto').touched && !fProyecto.get('nombre_proyecto').pristine }"
-                                                data-length="120"
-                                            >
-                                            <label for="nombre_proyecto">Nombre del proyecto</label> 
-                                        </div>
-    
-                                        <div class="input-field bordered col l4 s12">
-                                            <input id="nombre_corto" type="text" 
-                                                formControlName="nombre_corto"
-                                                materialize="CharacterCounter"
-                                                [ngClass]="{'has-error': fProyecto.get('nombre_corto').invalid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine, 
-                                                            'has-validated': fProyecto.get('nombre_corto').valid && fProyecto.get('nombre_corto').touched && !fProyecto.get('nombre_corto').pristine }"
-                                                data-length="20"
-                                            >
-                                            <label for="nombre_corto">Nombre corto</label>
-                                            <!-- <span *ngIf=" nombre_corto.errors?.minlength " class="helper-text animated fadeIn" >
-                                                Tiene que tener entre 5 y 18 caracteres
-                                            </span>-->
-    
-                                        </div>
-                                    </div>                                
-    
-                                    <div class="row">
-                                        <div class="input-field bordered col l8 s12">
-                                            <textarea id="descripcion_proyecto" class="materialize-textarea"  
-                                                formControlName="descripcion_proyecto"
-                                                materialize="CharacterCounter"
-                                                [ngClass]="{'has-error': fProyecto.get('descripcion_proyecto').invalid  && !fProyecto.get('descripcion_proyecto').pristine, 
-                                                            'has-validated': fProyecto.get('descripcion_proyecto').valid  && !fProyecto.get('descripcion_proyecto').pristine }"
-                                                data-length="300"
-                                            >
-                                            </textarea>
-                                            <label for="descripcion_proyecto">Descripción</label>
-                                        </div>     
-    
-                                        <div class="input-field bordered col l4 s12"
-                                        [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
-                                                    'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
-                                        >
-                                            <select formControlName="tipo_proyecto" materialize="FormSelect" >
-                                                <option value="" disabled selected>Elige un tipo</option>
-                                                <option value="1">Académico</option>
-                                                <option value="2">Investigación</option>
-                                                <option value="3">Social</option>
-                                                <option value="4">Espiritual</option>
-                                                <option value="5">Vinculación con el Medio</option>
-                                            </select>
-                                            <label
-                                            [ngClass]="{'has-error-text': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
-                                                        'has-validated-text': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
-                                            >Tipo de Proyecto</label>
-                                            <span 
-                                                [ngClass]="{'show': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine}"
-                                                class="helper-text hide" data-error="wrong" data-success="right"
-                                            >
-                                            tiene que elegir un tipo</span>
-                                        </div>                           
-                                    </div>   
-                                    
-                                    <div class="row">
-                                        <div class="file-field input-field bordered col s12 m6 l4">
-                                            <input id="foto_proyecto" type="text"
-                                                formControlName="foto_proyecto"
-                                            >                                        
-                                            <label for="foto_proyecto">Foto Proyecto</label>
-                                            <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
+                        <div class="row">
+                            <div class="file-field input-field bordered col s12 m6 l4">
+                                <input id="foto_proyecto" type="text"
+                                    formControlName="foto_proyecto"
+                                >                                        
+                                <label for="foto_proyecto">Foto Proyecto</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
 
-                                        </div>
+                            </div>
 
-                                        <div class="input-field bordered col s12 m6 l4">
-                                                <select materialize="FormSelect"  multiple>
-                                                    <optgroup label="team 1">
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                    </optgroup>
-                                                    <optgroup label="team 2">
-                                                        <option value="3">Option 3</option>
-                                                        <option value="4">Option 4</option>
-                                                    </optgroup>
-                                                </select>
-                                                <label>Optgroups</label>
-                                            </div>
-        
-                                            <div class="input-field bordered col s12 m12 l4">
-                                                <label>
-                                                    <input type="checkbox" class="filled-in" checked="checked" />
-                                                    <span>Crea una actividad base</span>
-                                                </label>        
-                                            </div>
+                            <div class="input-field bordered col s12 m6 l4">
+                                    <select materialize="FormSelect"  multiple>
 
-                                    </div>
-    
-                                    <!-- <div class="row">
-                                        <div class="input-field bordered col m6 s12">
-                                            <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
-                                                materialize="Datepicker"
-                                                [materializeParams]="[settingDatePicker]"
-                                                formControlName="fecha_inicio_proyecto"
-                                                [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
-                                                        'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
-                                            >
-                                            <label for="fecha_inicio_proyecto">Fecha de Inicio</label>
-                                            <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
-                                        </div>
-    
-                                        <div class="input-field bordered col m6 s12">
-                                            <input type="text" class="datepicker" id="fecha_fin_proyecto"
-                                                materialize="Datepicker"
-                                            [materializeParams]="[settingDatePicker]"
-                                                formControlName="fecha_fin_proyecto"
-                                                [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
-                                                        'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"
-                                            >
-                                            <label for="fecha_fin_proyecto">Fecha de Termino</label>
-                                            <span class="helper-text" data-error="wrong" data-success="right">y cuando termina</span>                                        
-                                        </div>
-                                    </div> -->
+                                        <optgroup label="nivel 1">
+                                            <option value="1">Área 1</option>
+                                            <option value="2">Área 2</option>
+                                        </optgroup>
 
-                                    <div class="row">
-                                        
-                                    </div>  
-    
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <button class="btn upeu-garnet waves-effect waves-light right" type="submit" name="action" [disabled]="fProyecto.invalid" >
-                                                Siguiente <i class="material-icons right">send</i>
-                                            </button>
-                                        </div>
-                                    </div>
-    
-                                </form>
+                                        <optgroup label="nivel 2">
+                                            <option value="3">Área 3</option>
+                                            <option value="4">Área 4</option>
+                                        </optgroup>
+
+                                        <optgroup label="nivel 2">
+                                            <option value="5">Área 5</option>
+                                            <option value="6">Área 6</option>
+                                        </optgroup>
+
+                                    </select>
+
+                                    <label>Áreas</label>
+                                </div>
+
+                                <div class="input-field bordered col s12 m12 l4">
+                                    <label>
+                                        <input type="checkbox" class="filled-in"  />
+                                        <span>Crea una actividad base</span>
+                                    </label>        
+                                </div>
+
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="input-field bordered col m6 s12">
+                                <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
+                                    materialize="Datepicker"
+                                    [materializeParams]="[settingDatePicker]"
+                                    formControlName="fecha_inicio_proyecto"
+                                    [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
+                                            'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
+                                >
+                                <label for="fecha_inicio_proyecto">Fecha de Inicio</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
+                            </div>
+
+                            <div class="input-field bordered col m6 s12">
+                                <input type="text" class="datepicker" id="fecha_fin_proyecto"
+                                    materialize="Datepicker"
+                                [materializeParams]="[settingDatePicker]"
+                                    formControlName="fecha_fin_proyecto"
+                                    [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
+                                            'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"
+                                >
+                                <label for="fecha_fin_proyecto">Fecha de Termino</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">y cuando termina</span>                                        
+                            </div>
+                        </div> -->
+
+                        <div class="row">
+                            
+                        </div>  
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn upeu-garnet waves-effect waves-light right" type="submit" name="action" [disabled]="fProyecto.invalid" >
+                                    Siguiente <i class="material-icons right">send</i>
+                                </button>
                             </div>
                         </div>
-                    </div>
+
+                    </form>
+                            
                 </div>
     
                 <!-- <div class="row">

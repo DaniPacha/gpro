@@ -63,7 +63,7 @@ body {
 
 .navbar .navbar-dark .header-search-wrapper input.header-search-input:hover,
 .navbar .navbar-dark .header-search-wrapper input.header-search-input:active,
-.navbar .navbar-dark .header-search-wrapper input.header-search-input:focus 
+.navbar .navbar-dark .header-search-wrapper input.header-search-input:focus
 {
     border: 1px solid rgba(230, 230, 230, .1);
     background: rgba(230, 230, 230, .1);
@@ -80,9 +80,8 @@ body {
     margin-top: 10px;
 }
 
-
-
 /* FIN DE HEADER */
+
 
 /* SIDENAV */
 .sidenav-main {
@@ -214,7 +213,7 @@ body {
     -moz-transition: none;
     -o-transition: none;
     transition: none;
-} 
+}
 
 .sidenav li.active .fa-angle-down:before {
     content: "\f106";
@@ -241,7 +240,7 @@ body {
 .collection .collection-item.active {
     background: #992e45;
     background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) ;
-    background: -webkit-linear-gradient(right, #992e45, #6b202e) ; 
+    background: -webkit-linear-gradient(right, #992e45, #6b202e) ;
     /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) ; */
     background:      -o-linear-gradient(right, #992e45, #6b202e) ;
     background:         linear-gradient(-90deg, #992e45, #6b202e) ;
@@ -259,7 +258,7 @@ body {
 .i-right{
     font-size: 16px !important;
     margin: 0 !important;
-    position: absolute;    
+    position: absolute;
     right: 10px;
     -webkit-transition: .3s ease all;
     -moz-transition: .3s ease all;
@@ -318,17 +317,17 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 
 /* bordeado inputs*/
-.bordered input:not([type]), 
-.bordered input[type=text]:not(.browser-default), 
-.bordered input[type=password]:not(.browser-default), 
-.bordered input[type=email]:not(.browser-default), 
-.bordered input[type=url]:not(.browser-default), 
-.bordered input[type=time]:not(.browser-default), 
-.bordered input[type=date]:not(.browser-default), 
-.bordered input[type=datetime]:not(.browser-default), 
-.bordered input[type=datetime-local]:not(.browser-default), 
-.bordered input[type=tel]:not(.browser-default), 
-.bordered input[type=number]:not(.browser-default), 
+.bordered input:not([type]),
+.bordered input[type=text]:not(.browser-default),
+.bordered input[type=password]:not(.browser-default),
+.bordered input[type=email]:not(.browser-default),
+.bordered input[type=url]:not(.browser-default),
+.bordered input[type=time]:not(.browser-default),
+.bordered input[type=date]:not(.browser-default),
+.bordered input[type=datetime]:not(.browser-default),
+.bordered input[type=datetime-local]:not(.browser-default),
+.bordered input[type=tel]:not(.browser-default),
+.bordered input[type=number]:not(.browser-default),
 .bordered input[type=search]:not(.browser-default),
 .bordered textarea.materialize-textarea {
     border: 1px solid #9e9e9e ;
@@ -338,16 +337,16 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 /* bordeado inputs hover*/
 
-.bordered input[type=text]:hover:not(.browser-default), 
-.bordered input[type=password]:hover:not(.browser-default), 
-.bordered input[type=email]:hover:not(.browser-default), 
-.bordered input[type=url]:hover:not(.browser-default), 
-.bordered input[type=time]:hover:not(.browser-default), 
-.bordered input[type=date]:hover:not(.browser-default), 
-.bordered input[type=datetime]:hover:not(.browser-default), 
-.bordered input[type=datetime-local]:hover:not(.browser-default), 
-.bordered input[type=tel]:hover:not(.browser-default), 
-.bordered input[type=number]:hover:not(.browser-default), 
+.bordered input[type=text]:hover:not(.browser-default),
+.bordered input[type=password]:hover:not(.browser-default),
+.bordered input[type=email]:hover:not(.browser-default),
+.bordered input[type=url]:hover:not(.browser-default),
+.bordered input[type=time]:hover:not(.browser-default),
+.bordered input[type=date]:hover:not(.browser-default),
+.bordered input[type=datetime]:hover:not(.browser-default),
+.bordered input[type=datetime-local]:hover:not(.browser-default),
+.bordered input[type=tel]:hover:not(.browser-default),
+.bordered input[type=number]:hover:not(.browser-default),
 .bordered input[type=search]:hover:not(.browser-default),
 .bordered textarea.materialize-textarea:hover {
     border: 1px solid #000 ;
@@ -416,6 +415,27 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
     width: calc(100% - 10px);
 }
 
+/* CHECKBOX */
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    border: 2px solid #992e45;
+    background-color: #992e45;
+}
+
+[type="checkbox"]:checked + span:not(.lever):before {
+    border-right: 2px solid #992e45;
+    border-bottom: 2px solid #992e45;
+}
+
+
+/* selects */
+.dropdown-content li {
+    min-height: 30px;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    padding: 4px 16px;
+}
+
 /* Validaciones */
 /* Correcto */
 input[type=text].has-validated:not(.browser-default):not([readonly]),
@@ -453,7 +473,7 @@ textarea.materialize-textarea.has-validated:not([readonly]) {
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 1px 0px green;
     box-shadow: 0px 0px 1px 0px green;
-   
+
 }
 
 input[type=text].has-validated:not(.browser-default) ~ label:not(.label-icon),
@@ -523,7 +543,7 @@ textarea.materialize-textarea.has-error:not([readonly])
     border: 1px solid red;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 1px 0px red;
-    box-shadow: 0px 0px 1px 0px red;   
+    box-shadow: 0px 0px 1px 0px red;
 }
 
 input[type=text].has-error:not(.browser-default) ~ label:not(.label-icon),
@@ -628,7 +648,7 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 {
       background: #992e45;
       background: -webkit-gradient(linear, right top, left top, from(#992e45), to(#6b202e)) ;
-      background: -webkit-linear-gradient(right, #992e45, #6b202e) ; 
+      background: -webkit-linear-gradient(right, #992e45, #6b202e) ;
       /* background: -moz- oldlinear-gradient(right, #992e45, #6b202e) ; */
       background:      -o-linear-gradient(right, #992e45, #6b202e) ;
       background:         linear-gradient(-90deg, #992e45, #6b202e) ;
@@ -645,9 +665,9 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     height: 64px;
 }
 
-.logo-upeu-gpro img{    
+.logo-upeu-gpro img{
     display: inline-block;
-    height: 40px;    
+    height: 40px;
     vertical-align: middle;
 }
 
@@ -780,7 +800,7 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     .progress {
         top: 56px;
     }
-    
+
 }
 
 @media only screen and (max-width: 992px){
@@ -812,7 +832,7 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
         box-shadow: none;
     }
 
-    
+
 }
 
 @media only screen and (min-width: 993px){
@@ -835,10 +855,10 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 }
 
 @media only screen and (min-width: 1200px){
-    
+
     #container-page{
         padding-top: 24px 32px;
-    
+
     }
     .container-page{
         padding: 0 32px;
