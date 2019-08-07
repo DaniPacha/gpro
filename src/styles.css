@@ -444,6 +444,11 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
     border-bottom: 2px solid #992e45;
 }
 
+[type="checkbox"].filled-in.tabbed:checked:focus + span:not(.lever):after {
+    border-radius: 2px;
+    background-color: #992e45;
+    border-color: #992e45;
+  }
 
 /* selects */
 .dropdown-content li {
@@ -670,6 +675,10 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 
 .upeu-garnet-text{
     color: #992e45;
+}
+
+.upeu-garnet{
+    background: #992e45;
 }
 
 .gradient-45upeu-dark

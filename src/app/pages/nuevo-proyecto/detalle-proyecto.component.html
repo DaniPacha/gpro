@@ -1,1 +1,270 @@
-<p>detalle-proyecto works!</p>
+<div class="animated fadeIn">
+
+    <div class="col s12 ">    
+        <div class="pb-0 " id="">
+            <!-- Search for small screen-->
+            <div class="container-page">
+                <div class="row ">
+                    <div class="col s12">
+                        <div class="title-page ">
+                            <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
+                                Detalle Proyecto <i class="material-icons">create</i>                                    
+                            </h2>
+                            <nav class="breadcrumb-page">
+                                <div class="nav-wrapper">
+                                    <div class="col s12">
+                                        <a routerLink="inicio" class="breadcrumb" disabled>Inicio</a>
+                                        <a routerLink="inicio" class="breadcrumb" disabled>Proyectos</a>
+                                        <span class="breadcrumb" disabled>Detalle Proyecto</span>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col s12  ">
+        <div class="container-page">
+            <div class="section">
+    
+                <div class="row">       
+                    
+                    <form class="col s12 "   >
+                        <div class="row">
+                            <div class="input-field bordered col l8 s12">
+                                <input id="nombre_proyecto" type="text" 
+                                    materialize="CharacterCounter"
+                                    data-length="120"
+                                >
+                                <label for="nombre_proyecto">Nombre del proyecto</label> 
+                            </div>
+
+                            <div class="input-field bordered col l4 s12">
+                                <input id="nombre_corto" type="text" 
+                                    materialize="CharacterCounter"
+                                    data-length="20"
+                                >
+                                <label for="nombre_corto">Nombre corto</label>
+                            </div>
+                        </div>                                
+
+                        <div class="row">
+                            <div class="input-field bordered col l8 s12">
+                                <textarea id="descripcion_proyecto" class="materialize-textarea"                                      
+                                    materialize="CharacterCounter"                                    
+                                    data-length="300"
+                                >
+                                </textarea>
+                                <label for="descripcion_proyecto">Descripción</label>
+                            </div>     
+
+                            <div class="input-field bordered col l4 s12 mt-s-1"  >
+                                <select  class=""  materialize="FormSelect" >
+                                    <option value="1" >Opcion 1</option>
+                                    <option value="2" >Opcion 2</option>
+                                    <option value="3" >Opcion 3</option>
+                                    <option value="4" >Opcion 4</option>
+                                </select>
+                                <label>Tipo de Proyecto</label>
+                                <span class="helper-text hide" data-error="wrong" data-success="right"
+                                >
+                                tiene que elegir un tipo</span>
+                            </div>                           
+                        </div>   
+                        
+                        <div class="row">
+                            <div class="file-field input-field bordered col s12 m6 l4 ">
+                                <input id="foto_proyecto" type="text"
+                                    
+                                >                                        
+                                <label for="foto_proyecto">Foto Proyecto</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
+
+                            </div>
+
+                            <div class="input-field bordered col s12 m6 l4 mt-s-1" >
+                                    <select materialize="FormSelect"  multiple>
+
+                                        <optgroup label="grupo 1" >
+                                            <option value="1" >Opcion 1</option>
+                                            <option value="2" >Opcion 2</option>
+                                            <option value="3" >Opcion 3</option>
+                                            <option value="4" >Opcion 4</option>
+                                        </optgroup>
+
+                                    </select>
+
+                                    <label>Áreas</label>
+                                </div>
+
+                                <div class="input-field bordered col s12 m12 l4">
+                                    <label>
+                                        <input type="checkbox" class="filled-in"
+                                        />
+                                        <span style="color: #777">Crea una actividad base</span>
+                                    </label>        
+                                </div>
+
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="input-field bordered col m6 s12">
+                                <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
+                                    materialize="Datepicker"
+                                    [materializeParams]="[settingDatePicker]"
+                                    formControlName="fecha_inicio_proyecto"
+                                    [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
+                                            'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
+                                >
+                                <label for="fecha_inicio_proyecto">Fecha de Inicio</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
+                            </div>
+
+                            <div class="input-field bordered col m6 s12">
+                                <input type="text" class="datepicker" id="fecha_fin_proyecto"
+                                    materialize="Datepicker"
+                                [materializeParams]="[settingDatePicker]"
+                                    formControlName="fecha_fin_proyecto"
+                                    [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
+                                            'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"
+                                >
+                                <label for="fecha_fin_proyecto">Fecha de Termino</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">y cuando termina</span>                                        
+                            </div>
+                        </div> -->
+
+                        <div class="row">
+                            
+                        </div>  
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn upeu-garnet waves-effect waves-light right" type="submit" name="action" >
+                                    Siguiente <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                            
+                </div>
+                
+
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image valign-wrapper">
+                                <img src="assets/img/images/img1.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>I am a lovery simple card. I am good at containing small bits of information.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="assets/img/images/img2.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="assets/img/images/img3.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="assets/img/images/img1.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/images/img1.jpg">
+                            <span class="card-title">Card Title</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-bell-o"></i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/images/img3.jpg">
+                            <span class="card-title">Card Title</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-bell-o"></i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/images/img2.jpg">
+                            <span class="card-title">Card Title</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-bell-o"></i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+        
+    </div>
