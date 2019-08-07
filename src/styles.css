@@ -271,14 +271,15 @@ body {
 
 /*  FORMULARIOS AJUSTES*/
 
+.input-field{
+    margin-top: 16px;
+    margin-bottom: 0px;
+}
 .input-field.bordered{
     margin-top: 0px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 
-.input-field{
-    margin-top: 0px;
-}
 
 /* inputs por defecto */
 input:not([type]):focus:not([readonly]),
@@ -379,6 +380,23 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 .bordered.input-field > label {
     margin-left: 8px;
 }
+
+.bordered.input-field select.browser-default~label {
+    background: #ffffff;
+    padding: 0 4px;
+    width: auto;
+    -webkit-transform: translateY(-10px) translateX(4px) scale(.9);
+       -moz-transform: translateY(-10px) translateX(4px) scale(.9);
+        -ms-transform: translateY(-10px) translateX(4px) scale(.9);
+         -o-transform: translateY(-10px) translateX(4px) scale(.9);
+            transform: translateY(-10px) translateX(4px) scale(.9);
+    -webkit-transform-origin: 0 0;
+       -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+         -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+}
+
 .bordered.input-field > label:not(.label-icon).active {
     background: #ffffff;
     padding: 0 4px;
@@ -434,6 +452,11 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .dropdown-content li > a, .dropdown-content li > span {
     padding: 4px 16px;
+}
+
+.bordered select.browser-default {
+    border: 1px solid #999;
+    border-radius: 5px;
 }
 
 /* Validaciones */
@@ -505,6 +528,11 @@ textarea.materialize-textarea.has-validated:not(.browser-default) ~ label:not(.l
     box-shadow: 0px 0px 1px 0px green;
 }
 
+.bordered.has-validated select.browser-default {
+    border: 1px solid green;
+    
+    border-radius: 5px;
+}
 
 
 /* Incorrecto - Invalidate*/
@@ -771,6 +799,33 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 
 .btn.upeu-garnet:hover{
     background-color: #c03553 !important;
+}
+
+@media only screen and (max-width: 600px){
+    .mt-s-1{
+        margin-top: 1rem !important;
+    }
+    
+    .mt-s-2{
+        margin-top: 2rem !important;
+    } 
+    
+    .mt-s-3{
+        margin-top: 3rem !important;
+    }
+    .mb-s-1{
+        margin-bottom: 1rem !important;
+    }
+    
+    .mb-s-2{
+        margin-bottom: 2rem !important;
+    } 
+    
+    .mb-s-3{
+        margin-bottom: 3rem !important;
+    }
+
+
 }
 
 @media only screen and (min-width: 601px){

@@ -74,17 +74,13 @@
                                 <label for="descripcion_proyecto">Descripción</label>
                             </div>     
 
-                            <div class="input-field bordered col l4 s12"
-                            [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
-                                        'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                            <div class="input-field bordered col l4 s12 mt-s-1"
+                                [ngClass]="{'has-error': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
+                                            'has-validated': fProyecto.get('tipo_proyecto').valid && !fProyecto.get('tipo_proyecto').pristine }"
+                                *ngIf="cargaTipoProyecto"
                             >
-                                <select formControlName="tipo_proyecto" materialize="FormSelect" >
-                                    <option value="" disabled selected>Elige un tipo</option>
-                                    <option value="1">Académico</option>
-                                    <option value="2">Investigación</option>
-                                    <option value="3">Social</option>
-                                    <option value="4">Espiritual</option>
-                                    <option value="5">Vinculación con el Medio</option>
+                                <select formControlName="tipo_proyecto" class=""  materialize="FormSelect"    >
+                                    <option *ngFor="let tipoP of tipoProyecto"  [value]="tipoP.id" >{{ tipoP.nombre_tipo_proyecto }}</option>
                                 </select>
                                 <label
                                 [ngClass]="{'has-error-text': fProyecto.get('tipo_proyecto').invalid && !fProyecto.get('tipo_proyecto').pristine, 
@@ -99,7 +95,7 @@
                         </div>   
                         
                         <div class="row">
-                            <div class="file-field input-field bordered col s12 m6 l4">
+                            <div class="file-field input-field bordered col s12 m6 l4 ">
                                 <input id="foto_proyecto" type="text"
                                     formControlName="foto_proyecto"
                                 >                                        
@@ -108,22 +104,13 @@
 
                             </div>
 
-                            <div class="input-field bordered col s12 m6 l4">
-                                    <select materialize="FormSelect"  multiple>
+                            <div class="input-field bordered col s12 m6 l4 mt-s-1" *ngIf="cargaAreasPersona">
+                                    <select materialize="FormSelect"  multiple
+                                        formControlName="areas_id"
+                                    >
 
-                                        <optgroup label="nivel 1">
-                                            <option value="1">Área 1</option>
-                                            <option value="2">Área 2</option>
-                                        </optgroup>
-
-                                        <optgroup label="nivel 2">
-                                            <option value="3">Área 3</option>
-                                            <option value="4">Área 4</option>
-                                        </optgroup>
-
-                                        <optgroup label="nivel 2">
-                                            <option value="5">Área 5</option>
-                                            <option value="6">Área 6</option>
+                                        <optgroup label="{{ categoria[0].nombre_categoria }}" *ngFor="let categoria of areasPersona; index as i">
+                                            <option [value]="area.area_id" *ngFor="let area of categoria" >{{ area.nombre_area_corto }}</option>
                                         </optgroup>
 
                                     </select>
@@ -133,8 +120,9 @@
 
                                 <div class="input-field bordered col s12 m12 l4">
                                     <label>
-                                        <input type="checkbox" class="filled-in"  />
-                                        <span>Crea una actividad base</span>
+                                        <input type="checkbox" class="filled-in"
+                                        formControlName="crear_actividad"/>
+                                        <span style="color: #777">Crea una actividad base</span>
                                     </label>        
                                 </div>
 
@@ -180,6 +168,12 @@
 
                     </form>
                             
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        {{ fProyecto.value | json }}
+                    </div>
                 </div>
     
                 <!-- <div class="row">
