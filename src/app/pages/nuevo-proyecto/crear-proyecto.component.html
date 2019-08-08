@@ -32,7 +32,7 @@
     
                 <div class="row">       
                     
-                    <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto()"  >
+                    <form class="col s12 " [formGroup]="fProyecto" (ngSubmit)="guardarProyecto()"  > 
                         <div class="row">
                             <div class="input-field bordered col l8 s12">
                                 <input id="nombre_proyecto" type="text" 
@@ -171,6 +171,10 @@
                 </div>
 
                 <div class="row">
+                    
+                    <div class="col s4">
+                        {{ fProyecto.valid }}
+                    </div>
                     <div class="col s4">
                         {{ fProyecto.value | json }}
                     </div>

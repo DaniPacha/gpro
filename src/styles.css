@@ -674,11 +674,11 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 
 
 .upeu-garnet-text{
-    color: #992e45;
+    color: #992e45 !important;
 }
 
 .upeu-garnet{
-    background: #992e45;
+    background: #992e45  !important;
 }
 
 .gradient-45upeu-dark

@@ -10,8 +10,8 @@
             <div class="container-page">
                 <div class="row ">
                     <div class="col s12">
-                        <div class="title-page ">
-                            <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
+                        <div class="title-page " style="position: relative">
+                            <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated fadeIn">
                                 Proyectos Pendientes <i class="fa fa-circle-o-notch  fa-spin" style="font-size: 0.7em"></i>                                    
                             </h2>
                             <nav class="breadcrumb-page">
@@ -23,6 +23,14 @@
                                     </div>
                                 </div>
                             </nav>
+                            
+                            <div class="button-nuevo-proyecto">
+                                <button class="btn waves-effect waves-light upeu-garnet" [routerLink]="[ '/nuevo-proyecto/crear-proyecto' ]">
+                                    <span class="hide-on-med-and-down show-on-large"> Nuevo Proyecto <i class="fa fa-plus" style="font-size: 1em"></i></span> 
+                                    <span class="show-on-medium-and-down hide-on-large-only"><i class="fa fa-plus" style="font-size: 1em"></i></span> 
+                                </button>                                    
+                            </div>
+
                         </div>
                     </div>
                 </div>
