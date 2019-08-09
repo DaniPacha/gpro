@@ -1,0 +1,11 @@
+.card .card-image .card-title {
+    background: rgba(255, 255, 255, 0.75); 
+    bottom: 0;
+    color: rgb(0, 0, 0);
+    left: 0;
+    font-weight: 400;
+    padding: 12px;
+    line-height: 1.2;
+    position: absolute;
+    width: 100%;
+}

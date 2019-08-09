@@ -27,6 +27,8 @@ import { PendientesComponent } from './pages/nuevo-proyecto/pendientes.component
 import { NuevaActividadComponent } from './pages/nuevo-proyecto/nueva-actividad.component';
 import { DetalleProyectoComponent } from './pages/nuevo-proyecto/detalle-proyecto.component';
 import { DetalleActividadComponent } from './pages/nuevo-proyecto/detalle-actividad.component';
+import { ActividadTarjetaComponent } from './components/actividad-tarjeta/actividad-tarjeta.component';
+import { ActividadTarjetaHorizontalComponent } from './components/actividad-tarjeta-horizontal/actividad-tarjeta-horizontal.component';
 
 
 
@@ -41,7 +43,9 @@ import { DetalleActividadComponent } from './pages/nuevo-proyecto/detalle-activi
     DetalleProyectoComponent,
     NuevaActividadComponent,
     DetalleActividadComponent,
-    CrearProyectoComponent
+    CrearProyectoComponent,
+    ActividadTarjetaComponent,
+    ActividadTarjetaHorizontalComponent
   ],
   imports: [
     BrowserModule,

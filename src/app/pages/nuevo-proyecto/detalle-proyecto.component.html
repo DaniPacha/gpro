@@ -154,126 +154,13 @@
                 
 
                 <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card horizontal">
-                            <div class="card-image valign-wrapper">
-                                <img src="assets/img/images/img1.jpg">
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                    <p>I am a lovery simple card. I am good at containing small bits of information.</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#">This is a link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m6">
-                        <div class="card horizontal">
-                            <div class="card-image">
-                                <img src="assets/img/images/img2.jpg">
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#">This is a link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
-                </div>
-
-
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card horizontal">
-                            <div class="card-image">
-                                <img src="assets/img/images/img3.jpg">
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#">This is a link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m6">
-                        <div class="card horizontal">
-                            <div class="card-image">
-                                <img src="assets/img/images/img1.jpg">
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                    <p>I am a very simple card. I am good at containing small bits of information.</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#">This is a link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <app-actividad-tarjeta-horizontal *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta-horizontal>
                     
                 </div>
 
                 <div class="row">
-                    <div class="col s12 m4 l3">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/img/images/img1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-plus" style="font-size: 1em;" ></i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/img/images/img3.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-plus" style="font-size: 1em;" ></i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="assets/img/images/img2.jpg">
-                                <span class="card-title ">Actividad del Proyecto 1 de la UPeU FT</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-plus" style="font-size: 1em;" ></i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m4 l3">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/img/images/img3.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet"><i class="fa fa-plus" style="font-size: 1em;"></i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <app-actividad-tarjeta *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta>
                 </div>
             </div>
     

@@ -1,0 +1,67 @@
+.card .card-image .card-title {
+    background: rgba(255, 255, 255, 0.75); 
+    bottom: initial !important;
+    color: rgb(0, 0, 0);
+    left: 0;
+    font-weight: 400;
+    padding: 12px;
+    line-height: 1.2;
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+
+.card.horizontal .card-image {
+    max-width: 45%;
+}
+
+.card.horizontal .card-stacked {
+    max-width: 55%;
+}
+
+.card .card-content {
+    padding: 8px 12px 6px 12px;
+}
+
+.card .card-action {
+    padding: 5px 10px;
+}
+
+.ppto {
+    margin-right: 16px
+}
+
+.operativo {
+    border: 1px solid orange;
+    border-radius: 3px; 
+    padding: 0px 4px;
+
+}
+
+.autofinanciado {
+    border: 1px solid green;
+    border-radius: 3px; 
+    padding: 0px 4px;
+
+}
+
+.total {
+    border: 1px solid blue;
+    border-radius: 3px; 
+    padding: 0px 4px;
+
+}
+
+
+
+@media only screen and (min-width: 1441px){
+    .card .card-action {
+        padding: 16px 24px;
+    }
+}
+
+@media only screen and (width: 1441px){
+    .card .card-action {
+        padding: 16px 24px;
+    }
+}
