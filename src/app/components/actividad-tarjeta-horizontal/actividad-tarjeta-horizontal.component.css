@@ -1,3 +1,7 @@
+a {
+    color: #444;
+}
+
 .card .card-image .card-title {
     background: rgba(255, 255, 255, 0.75); 
     bottom: initial !important;

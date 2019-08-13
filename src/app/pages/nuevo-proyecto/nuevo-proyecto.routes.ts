@@ -11,7 +11,7 @@ export const NUEVO_PROYECTO_ROUTES: Routes = [
     { path: 'pendientes', component: PendientesComponent },
     { path: 'crear-proyecto', component: CrearProyectoComponent },
     { path: 'detalle-proyecto/:gp_id', component: DetalleProyectoComponent },
-    { path: 'nueva-actividad', component: NuevaActividadComponent },
-    { path: 'detalle-actividad', component: DetalleActividadComponent },
+    { path: 'nueva-actividad/:gp_id', component: NuevaActividadComponent },
+    { path: 'detalle-actividad/:actividad_id', component: DetalleActividadComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'pendientes'}
 ];

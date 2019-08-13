@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-actividad-tarjeta-horizontal',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actividad-tarjeta-horizontal.component.css']
 })
 export class ActividadTarjetaHorizontalComponent implements OnInit {
-
+  @Input() linkDetalle: string;
+  @Input() actividad: any[] = [];
   constructor() { }
 
   ngOnInit() {

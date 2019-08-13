@@ -1,19 +1,24 @@
 <div class="col s12 m4 l3">
+    <a class="pointer" [routerLink]="[ linkDetalle , actividad.id_actividad ]">
+        <div class="card hoverable">
+            
+            <div class="card-image">
+                <img src="assets/img/images/img3.jpg">
+                <span class="card-title">{{ actividad.nombre_actividad }}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet">
+                    <i class="fa fa-plus" style="font-size: 1em;"></i>
+                </a>
+            </div>
 
-    <div class="card">
-        
-        <div class="card-image">
-            <img src="assets/img/images/img3.jpg">
-            <span class="card-title">Título de Tarjeta</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light upeu-garnet">
-                <i class="fa fa-plus" style="font-size: 1em;"></i>
-            </a>
+            <div class="card-content">
+                <p>{{ actividad.descripcion }}</p>
+                <p>{{ actividad.fecha }}</p>
+                <p>{{ actividad.areas }}</p>
+                <p>{{ actividad.ejes }}</p>
+                <p>{{ actividad.total }}</p>
+            </div>
+
         </div>
-
-        <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-
-    </div>
+    </a>
 
 </div>

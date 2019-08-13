@@ -45,9 +45,9 @@
                 <!--E-commerce Card-->
                 <div id="image-card" class="section">           
                     <div class="row">
-                        <div class="col s12 m4 animate fadeIn" *ngFor="let proyecto of proyectos" >
-                            <a class="pointer">
-                                <div class="card  card-width _grey _darken-4 _gradient-45upeu-dark  _gradient-45upeu-plata-amarillo  " >
+                        <div class="col s12 m4 l3  animate fadeIn" *ngFor="let proyecto of proyectos" >
+                            <a class="pointer" [routerLink]="[ '/nuevo-proyecto/detalle-proyecto', proyecto.gp_id ]">
+                                <div class="card  hoverable card-width _grey _darken-4 _gradient-45upeu-dark  _gradient-45upeu-plata-amarillo  " >
                                     <div class="card-content _white-text">
                                         <span class="badge gradient-shadow mt-1 mr-1 br-3 {{ proyecto.class_tipo_proyecto }}">{{ proyecto.tipo_proyecto }}</span>
                                         <span class="truncate card-title font-weight-700 mb-3 " style="font-size: 24px" data-position="bottom" data-tooltip=""  >{{ proyecto.proyecto }}   </span>

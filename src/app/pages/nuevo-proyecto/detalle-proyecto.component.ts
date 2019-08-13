@@ -10,6 +10,10 @@ import { ProyectoService } from '../../services/proyecto.service';
 })
 export class DetalleProyectoComponent implements OnInit {
   actividades: any[] = [];
+  loadingActividad = false;
+  proyecto: any[] = [];
+  loadingProyecto = true;
+  linkActividad = '/nuevo-proyecto/detalle-actividad';
   tipoVisualizacion: any[] = ['Tarjetas', 'Tarjetas-Horozon', 'Lista-Full'];
   @Input() gp_id: any;
 
@@ -22,13 +26,27 @@ export class DetalleProyectoComponent implements OnInit {
 
     this.sProyecto.proyectoActividades( this.gp_id )
       .subscribe( (data: any) => {
+        console.log('Actividades Proyecto:');
         console.log(data);
         if ( data.status === 200 ) {
-          this.actividades = data.data;
+        this.loadingActividad = true;
+        this.actividades = data.data;
         } else {
           console.log( data.message );
         }
       });
+
+    this.sProyecto.proyectoRead( this.gp_id )
+    .subscribe( (data: any) => {
+      console.log('ProyectoRead:');
+      console.log(data);
+      if ( data.status === 200 ) {
+        this.loadingProyecto = true;
+        this.proyecto = data.data;
+      } else {
+        console.log( data.message );
+      }
+    });
 
   }
 

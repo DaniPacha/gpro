@@ -778,7 +778,7 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 /* TITULO DE CADA PAGÍNA */
 .title-page h2{
     margin-top: 0;
-    font-size: 38px;
+    font-size: 32px;
     margin-bottom: 12px
 }
 

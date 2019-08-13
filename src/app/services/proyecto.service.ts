@@ -37,7 +37,7 @@ export class ProyectoService {
 
   proyectoRead(fProyecto: any) {
     return this.http.get(
-      this.url + 'proyectos/proyecto_crear.jsp' ,
+      this.url + 'proyectos/proyecto.jsp' ,
       {params: fProyecto}
     );
   }

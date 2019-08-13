@@ -30,138 +30,57 @@
         <div class="container-page">
             <div class="section">
     
-                <div class="row">       
-                    
-                    <form class="col s12 "   >
-                        <div class="row">
-                            <div class="input-field bordered col l8 s12">
-                                <input id="nombre_proyecto" type="text" 
-                                    materialize="CharacterCounter"
-                                    data-length="120"
-                                >
-                                <label for="nombre_proyecto">Nombre del proyecto</label> 
-                            </div>
-
-                            <div class="input-field bordered col l4 s12">
-                                <input id="nombre_corto" type="text" 
-                                    materialize="CharacterCounter"
-                                    data-length="20"
-                                >
-                                <label for="nombre_corto">Nombre corto</label>
-                            </div>
-                        </div>                                
-
-                        <div class="row">
-                            <div class="input-field bordered col l8 s12">
-                                <textarea id="descripcion_proyecto" class="materialize-textarea"                                      
-                                    materialize="CharacterCounter"                                    
-                                    data-length="300"
-                                >
-                                </textarea>
-                                <label for="descripcion_proyecto">Descripción</label>
-                            </div>     
-
-                            <div class="input-field bordered col l4 s12 mt-s-1"  >
-                                <select  class=""  materialize="FormSelect" >
-                                    <option value="1" >Opcion 1</option>
-                                    <option value="2" >Opcion 2</option>
-                                    <option value="3" >Opcion 3</option>
-                                    <option value="4" >Opcion 4</option>
-                                </select>
-                                <label>Tipo de Proyecto</label>
-                                <span class="helper-text hide" data-error="wrong" data-success="right"
-                                >
-                                tiene que elegir un tipo</span>
-                            </div>                           
-                        </div>   
-                        
-                        <div class="row">
-                            <div class="file-field input-field bordered col s12 m6 l4 ">
-                                <input id="foto_proyecto" type="text"
-                                    
-                                >                                        
-                                <label for="foto_proyecto">Foto Proyecto</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">Sería bueno tener una imagen</span>
-
-                            </div>
-
-                            <div class="input-field bordered col s12 m6 l4 mt-s-1" >
-                                    <select materialize="FormSelect"  multiple>
-
-                                        <optgroup label="grupo 1" >
-                                            <option value="1" >Opcion 1</option>
-                                            <option value="2" >Opcion 2</option>
-                                            <option value="3" >Opcion 3</option>
-                                            <option value="4" >Opcion 4</option>
-                                        </optgroup>
-
-                                    </select>
-
-                                    <label>Áreas</label>
-                                </div>
-
-                                <div class="input-field bordered col s12 m12 l4">
-                                    <label>
-                                        <input type="checkbox" class="filled-in"
-                                        />
-                                        <span style="color: #777">Crea una actividad base</span>
-                                    </label>        
-                                </div>
-
+                <div class="datos-proyecto">       
+                    <div class="row">
+                        <div class="col l8 s12" >
+                            <label style="font-weight: 600;" >PROYECTO: </label> 
+                            <span >{{ proyecto.nombre_proyecto | uppercase }}</span> 
                         </div>
 
-                        <!-- <div class="row">
-                            <div class="input-field bordered col m6 s12">
-                                <input type="text" class="datepicker" id="fecha_inicio_proyecto"                                        
-                                    materialize="Datepicker"
-                                    [materializeParams]="[settingDatePicker]"
-                                    formControlName="fecha_inicio_proyecto"
-                                    [ngClass]="{'has-error': fProyecto.get('fecha_inicio_proyecto').invalid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine, 
-                                            'has-validated': fProyecto.get('fecha_inicio_proyecto').valid && fProyecto.get('fecha_inicio_proyecto').touched && !fProyecto.get('fecha_inicio_proyecto').pristine }"
-                                >
-                                <label for="fecha_inicio_proyecto">Fecha de Inicio</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">díganos cuando inicia</span>
-                            </div>
-
-                            <div class="input-field bordered col m6 s12">
-                                <input type="text" class="datepicker" id="fecha_fin_proyecto"
-                                    materialize="Datepicker"
-                                [materializeParams]="[settingDatePicker]"
-                                    formControlName="fecha_fin_proyecto"
-                                    [ngClass]="{'has-error': fProyecto.get('fecha_fin_proyecto').invalid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine, 
-                                            'has-validated': fProyecto.get('fecha_fin_proyecto').valid && fProyecto.get('fecha_fin_proyecto').touched && !fProyecto.get('fecha_fin_proyecto').pristine }"
-                                >
-                                <label for="fecha_fin_proyecto">Fecha de Termino</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">y cuando termina</span>                                        
-                            </div>
-                        </div> -->
-
-                        <div class="row">
-                            
-                        </div>  
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <button class="btn upeu-garnet waves-effect waves-light right" type="submit" name="action" >
-                                    Siguiente <i class="material-icons right">send</i>
-                                </button>
-                            </div>
+                        <div class="col l4 s12" >
+                            <label for="nombre_corto">Nombre corto: </label>
+                            <span >{{ proyecto.nombre_proyecto_corto }}</span> 
                         </div>
+                    </div>                                
 
-                    </form>
-                            
+                    <div class="row">
+                        <div class="col l8 s12">
+                            <label for="descripcion_proyecto">Descripción</label>
+                            <span>{{ proyecto.descripcion }}</span>
+                        </div>     
+
+                        <div class="col l4 s12 mt-s-1"  >                                
+                            <label>Tipo de Proyecto</label>
+                            <span>{{ proyecto.tipo_proyecto }}</span>
+                        </div>                           
+                    </div>                              
                 </div>
                 
+                <div class="actividades-proyecto">
+                    <div class="header-actividades">
+                        <h2>Actividades</h2>
+                        
+                        <div class="button-nueva-actividad">
+                            <button class="btn waves-effect waves-light upeu-garnet" [routerLink]="[ '/nuevo-proyecto/nueva-actividad', gp_id.gp_id ]">
+                                <span class="hide-on-med-and-down show-on-large"><i class="fa fa-plus" style="font-size: 1em"></i> Nueva Actividad</span> 
+                                <span class="show-on-medium-and-down hide-on-large-only"><i class="fa fa-plus" style="font-size: 1em"></i></span> 
+                            </button>                                    
+                        </div>
 
-                <div class="row">
-                    
-                    <app-actividad-tarjeta-horizontal *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta-horizontal>
-                    
+                    </div>
+                    <div class="row">
+                        
+                        <app-actividad-tarjeta-horizontal [actividad]="actividad" [linkDetalle]="linkActividad" *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta-horizontal>
+                        
+                    </div>
+
+                    <!-- <div class="row">
+                        <app-actividad-tarjeta [actividad]="actividad" [linkDetalle]="linkActividad" *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta>
+                    </div> -->
+
+
                 </div>
 
-                <div class="row">
-                    <app-actividad-tarjeta *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta>
-                </div>
             </div>
     
         </div>

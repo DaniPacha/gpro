@@ -1,0 +1,43 @@
+.datos-proyecto label {
+    color: #992e45;
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+
+}
+.datos-proyecto h2 {
+    font-size: 18px;
+    width: 100%;
+
+}
+
+.datos-proyecto span {
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+}
+.datos-proyecto .row {
+    margin-bottom: 14px;
+
+}
+
+.actividades-proyecto h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header-actividades {
+    position: relative;
+}
+.button-nueva-actividad{
+    position: absolute;
+    top: 4px;
+    right: 16px;
+}
+
+.header-actividades {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
