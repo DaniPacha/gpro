@@ -4,7 +4,7 @@
         <div class="pb-0 " id="">
             <!-- Search for small screen-->
             <div class="container-page">
-                <div class="row ">
+                <div class="row row-title-page">
                     <div class="col s12">
                         <div class="title-page ">
                             <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
@@ -13,9 +13,9 @@
                             <nav class="breadcrumb-page">
                                 <div class="nav-wrapper">
                                     <div class="col s12">
-                                        <a routerLink="inicio" class="breadcrumb" disabled>Inicio</a>
-                                        <a routerLink="inicio" class="breadcrumb" disabled>Proyectos</a>
-                                        <span class="breadcrumb" disabled>Nuevo Proyecto</span>
+                                        <a href="#" class="breadcrumb" disabled >Proyectos</a>
+                                        <a [routerLink]="[ '/nuevo-proyecto/pendientes' ]" class="breadcrumb" disabled >Nuevo Proyecto</a>
+                                        <span class="breadcrumb" disabled>Crear Proyecto</span>
                                     </div>
                                 </div>
                             </nav>

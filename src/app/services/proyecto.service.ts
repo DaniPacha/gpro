@@ -64,5 +64,11 @@ export class ProyectoService {
     return this.http.get( this.url + 'proyectos/lista_areas_persona.jsp' );
   }
 
+  actividadRead( parametros: any) {
+    return this.http.get(
+      this.url + 'proyectos/actividad_detalle.jsp' ,
+      {params: parametros}
+    );
+  }
 }
 

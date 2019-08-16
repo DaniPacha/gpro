@@ -14,20 +14,20 @@ export class DetalleProyectoComponent implements OnInit {
   proyecto: any[] = [];
   loadingProyecto = true;
   linkActividad = '/nuevo-proyecto/detalle-actividad';
-  tipoVisualizacion: any[] = ['Tarjetas', 'Tarjetas-Horozon', 'Lista-Full'];
-  @Input() gp_id: any;
+  tipoVisualizacion = ['Tarjetas', 'Tarjetas-Horozon', 'Lista-Full'];
+  @Input() paramsProyecto: any;
 
 
   constructor( private sProyecto: ProyectoService, private router: ActivatedRoute ) {
     this.router.params.subscribe( parametro => {
       // console.log( parametro );
-      this.gp_id = parametro;
+      this.paramsProyecto = parametro;
     });
 
-    this.sProyecto.proyectoActividades( this.gp_id )
+    this.sProyecto.proyectoActividades( this.paramsProyecto )
       .subscribe( (data: any) => {
-        console.log('Actividades Proyecto:');
-        console.log(data);
+        // console.log('Actividades Proyecto:');
+        // console.log(data);
         if ( data.status === 200 ) {
         this.loadingActividad = true;
         this.actividades = data.data;
@@ -36,10 +36,10 @@ export class DetalleProyectoComponent implements OnInit {
         }
       });
 
-    this.sProyecto.proyectoRead( this.gp_id )
+    this.sProyecto.proyectoRead( this.paramsProyecto )
     .subscribe( (data: any) => {
-      console.log('ProyectoRead:');
-      console.log(data);
+      // console.log('ProyectoRead:');
+      // console.log(data);
       if ( data.status === 200 ) {
         this.loadingProyecto = true;
         this.proyecto = data.data;

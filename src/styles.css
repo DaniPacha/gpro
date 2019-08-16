@@ -786,6 +786,10 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     overflow: hidden;
     margin: 1rem 0 .5rem 0;
 }
+
+.row-title-page {
+    margin-bottom: 0;
+}
 /* FIN DE TITULO  DE CADA PAGINA */
 
 

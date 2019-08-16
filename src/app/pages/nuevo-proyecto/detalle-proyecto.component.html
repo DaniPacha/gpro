@@ -4,7 +4,7 @@
         <div class="pb-0 " id="">
             <!-- Search for small screen-->
             <div class="container-page">
-                <div class="row ">
+                <div class="row row-title-page">
                     <div class="col s12">
                         <div class="title-page ">
                             <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
@@ -13,8 +13,8 @@
                             <nav class="breadcrumb-page">
                                 <div class="nav-wrapper">
                                     <div class="col s12">
-                                        <a routerLink="inicio" class="breadcrumb" disabled>Inicio</a>
-                                        <a routerLink="inicio" class="breadcrumb" disabled>Proyectos</a>
+                                        <a href="#" class="breadcrumb" disabled >Proyectos</a>
+                                        <a [routerLink]="[ '/nuevo-proyecto/pendientes' ]" class="breadcrumb" disabled >Nuevo Proyecto</a>
                                         <span class="breadcrumb" disabled>Detalle Proyecto</span>
                                     </div>
                                 </div>
@@ -29,46 +29,89 @@
     <div class="col s12  ">
         <div class="container-page">
             <div class="section">
-    
-                <div class="datos-proyecto">       
+
+                <div class="datos-proyecto animated fadeIn" *ngIf="loadingProyecto">       
                     <div class="row">
-                        <div class="col l8 s12" >
-                            <label style="font-weight: 600;" >PROYECTO: </label> 
-                            <span >{{ proyecto.nombre_proyecto | uppercase }}</span> 
+                        <div class="col s12" >
+                            <label class="label-proyecto" >PROYECTO: </label> 
+                            <h2 >{{ proyecto.nombre_proyecto | uppercase }}</h2> 
+                            <h3 >{{ proyecto.nombre_proyecto_corto  }}</h3> 
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col s12" >
+                            <label >Descripción: </label> 
+                            <span >{{ proyecto.descripcion }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Fecha: </label>
+                            <span >{{ proyecto.fechas }}</span> 
                         </div>
 
-                        <div class="col l4 s12" >
-                            <label for="nombre_corto">Nombre corto: </label>
-                            <span >{{ proyecto.nombre_proyecto_corto }}</span> 
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Tipo Proyecto: </label>
+                            <span >{{ proyecto.tipo_proyecto }}</span> 
                         </div>
+
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Estado: </label>
+                            <span >{{ proyecto.estado }}</span> 
+                        </div>
+
                     </div>                                
 
                     <div class="row">
-                        <div class="col l8 s12">
-                            <label for="descripcion_proyecto">Descripción</label>
-                            <span>{{ proyecto.descripcion }}</span>
-                        </div>     
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Ejes Estratégicos: </label>
+                            <span >{{ proyecto.ejes }}</span> 
+                        </div>
 
-                        <div class="col l4 s12 mt-s-1"  >                                
-                            <label>Tipo de Proyecto</label>
-                            <span>{{ proyecto.tipo_proyecto }}</span>
-                        </div>                           
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Áreas Involucradas: </label>
+                            <span >{{ proyecto.areas }}</span> 
+                        </div>
+
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">Creador: </label>
+                            <span >{{ proyecto.estado }}</span> 
+                        </div>
+
+                    </div> 
+
+                    <div class="row">
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">PPTO. Operativo: </label>
+                            <span >S/ {{ proyecto.presupuesto }}</span> 
+                        </div>
+
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">PPTO. Autofinanciado: </label>
+                            <span >S/ {{ proyecto.autofinanciado }}</span> 
+                        </div>
+
+                        <div class="col s12 m6 l4 " >
+                            <label for="nombre_corto">PPTO. Total: </label>
+                            <span >S/ {{ proyecto.total }}</span> 
+                        </div>           
                     </div>                              
                 </div>
                 
-                <div class="actividades-proyecto">
+                <div class="actividades-proyecto ">
                     <div class="header-actividades">
                         <h2>Actividades</h2>
                         
                         <div class="button-nueva-actividad">
-                            <button class="btn waves-effect waves-light upeu-garnet" [routerLink]="[ '/nuevo-proyecto/nueva-actividad', gp_id.gp_id ]">
+                            <button class="btn waves-effect waves-light upeu-garnet" [routerLink]="[ '/nuevo-proyecto/nueva-actividad', paramsProyecto.proyecto_id ]">
                                 <span class="hide-on-med-and-down show-on-large"><i class="fa fa-plus" style="font-size: 1em"></i> Nueva Actividad</span> 
                                 <span class="show-on-medium-and-down hide-on-large-only"><i class="fa fa-plus" style="font-size: 1em"></i></span> 
                             </button>                                    
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row animated fadeIn" *ngIf="loadingActividad">
                         
                         <app-actividad-tarjeta-horizontal [actividad]="actividad" [linkDetalle]="linkActividad" *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta-horizontal>
                         

@@ -8,7 +8,7 @@
         <div class="pb-0 " id="">
             <!-- Search for small screen-->
             <div class="container-page">
-                <div class="row ">
+                <div class="row row-title-page">
                     <div class="col s12">
                         <div class="title-page " style="position: relative">
                             <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated fadeIn">
@@ -46,7 +46,7 @@
                 <div id="image-card" class="section">           
                     <div class="row">
                         <div class="col s12 m4 l3  animate fadeIn" *ngFor="let proyecto of proyectos" >
-                            <a class="pointer" [routerLink]="[ '/nuevo-proyecto/detalle-proyecto', proyecto.gp_id ]">
+                            <a class="pointer" [routerLink]="[ '/nuevo-proyecto/detalle-proyecto', proyecto.proyecto_id ]">
                                 <div class="card  hoverable card-width _grey _darken-4 _gradient-45upeu-dark  _gradient-45upeu-plata-amarillo  " >
                                     <div class="card-content _white-text">
                                         <span class="badge gradient-shadow mt-1 mr-1 br-3 {{ proyecto.class_tipo_proyecto }}">{{ proyecto.tipo_proyecto }}</span>
