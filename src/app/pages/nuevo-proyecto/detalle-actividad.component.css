@@ -1,4 +1,8 @@
-.datos-proyecto label {
+a {
+    cursor: pointer;
+}
+
+.datos-actividad label {
     color: #992e45;
     display: block;
     font-size: 12px;
@@ -7,39 +11,52 @@
 
 }
 
-.datos-proyecto h2 {
+.datos-actividad h2 {
     font-size: 24px;
-    width: 100%;
+    width: auto;
     margin: 4px 0px;
 
 }
 
-.datos-proyecto h3 {
+.datos-actividad h3 {
     font-size: 18px;
-    width: 100%;
+    width: auto;
     margin: 0;
 
 }
 
-.datos-proyecto span {
+.datos-actividad h4 {
+
+    color: #444;
+    display: inline-block;
+    font-size: 16px;
+    width: auto;
+    margin: 0;
+
+}
+
+.datos-actividad span {
     display: block;
     font-size: 16px;
     width: 100%;
     position: relative;
 }
-.datos-proyecto .row {
+.datos-actividad .row{
     margin-bottom: 10px;
 }
-
-.actividades-proyecto h2 {
+.presupuesto-actividad {
+    margin-top: 20px;
+}
+.presupuesto-actividad h2 {
     font-size: 24px;
-    margin: 0;
 }
 
-.header-actividades {
+.header-presupuesto {
+    margin-top: 20px;
+    margin-bottom: 10px;
     position: relative;
 }
-.button-nueva-actividad{
+.button-nuevo-presupuesto{
     position: absolute;
     top: 4px;
     right: 16px;
@@ -48,6 +65,12 @@
 .header-actividades {
     margin-top: 30px;
     margin-bottom: 10px;
+}
+
+
+label.label-actividad {
+    font-weight: 600;
+    font-size: 14px !important;
 }
 
 label.label-proyecto {

@@ -8,7 +8,7 @@
                         <div class="col s12">
                             <div class="title-page ">
                                 <h2 class="upeu-text mt-0 mb-0 upeu-garnet-text animated shake">
-                                    Detalle Proyecto <i class="material-icons">create</i>                                    
+                                    Detalle de Actividad <i class="material-icons">create</i>                                    
                                 </h2>
                                 <nav class="breadcrumb-page">
                                     <div class="nav-wrapper">
@@ -30,19 +30,22 @@
             <div class="container-page">
                 <div class="section">
     
-                    <div class="datos-proyecto" *ngIf="loadingAcividad" >       
+                    <div class="datos-actividad" *ngIf="loadingAcividad" >       
                         <div class="row">
                             <div class="col s12" >
                                 <label class="label-proyecto" >PROYECTO: </label> 
-                                <h2 >{{ actividad.nombre_proyecto | uppercase }}</h2> 
-                                <h3 >{{ actividad.nombre_proyecto_corto  }}</h3> 
+                                <a [routerLink]="[ '/nuevo-proyecto/detalle-proyecto', actividad.proyecto_id ]">
+                                    <h4  class="tooltipped" data-position="right" data-tooltip="volver al proyecto" materialize="Tooltip" [materializeParams]="[{enterDelay: 500}]" >
+                                        {{ actividad.nombre_proyecto | uppercase }} <i class="fa fa-undo" aria-hidden="true"></i>
+                                    </h4> 
+                                </a>
                             </div>
                         </div>  
                         <div class="row">
                             <div class="col s12" >
-                                <label class="label-proyecto" >ACTIVIDAD: </label> 
-                                <h2 >{{ actividad.nombre_proyecto | uppercase }}</h2> 
-                                <h3 >{{ actividad.nombre_proyecto_corto  }}</h3> 
+                                <label class="label-actividad" >ACTIVIDAD: </label> 
+                                <h2 >{{ actividad.nombre_actividad | uppercase }}</h2> 
+                                <h3 >{{ actividad.nombre_actividad_corto  }}</h3> 
                             </div>
                         </div>  
                         <div class="row">
@@ -59,8 +62,8 @@
                             </div>
     
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">Tipo Proyecto: </label>
-                                <span >{{ actividad.tipo_proyecto }}</span> 
+                                <label for="nombre_corto">Tipo de Actividad: </label>
+                                <span >{{ actividad.tipo_actividad }}</span> 
                             </div>
     
                             <div class="col s12 m6 l4 " >
@@ -73,55 +76,296 @@
                         <div class="row">
                             <div class="col s12 m6 l4 " >
                                 <label for="nombre_corto">Ejes Estratégicos: </label>
-                                <span >{{ actividad.ejes }}</span> 
+                                <div class="chip" *ngFor="let eje of actividad.ejes">
+                                    {{ eje.eje_name_short }}
+                                </div>
+                                <!-- <span >{{ actividad.ejes }}</span>  -->
                             </div>
     
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">Áreas Involucradas: </label>
-                                <span >{{ actividad.areas }}</span> 
+                                <label>Áreas Involucradas: </label>
+                                <div class="chip" *ngFor="let area of actividad.areas">
+                                    {{ area.area_name_short }}
+                                </div>
+                                <!-- <span >{{ actividad.areas }}</span>  -->
                             </div>
     
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">Creador: </label>
-                                <span >{{ actividad.estado }}</span> 
+                                <label>Creador: </label>
+                                <div class="chip">
+                                    <img [src]="actividad.creador_foto" alt="Contact Person">
+                                    {{ actividad.creador }}
+                                </div>
+                                  <!-- <span >{{ actividad.estado }}</span>  -->
                             </div>
     
                         </div> 
     
                         <div class="row">
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">PPTO. Operativo: </label>
-                                <span >S/ {{ actividad.presupuesto }}</span> 
+                                <label>PPTO. Operativo: </label>
+                                <span >S/ {{ actividad.ppto_operativo }}</span> 
                             </div>
     
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">PPTO. Autofinanciado: </label>
-                                <span >S/ {{ actividad.autofinanciado }}</span> 
+                                <label>PPTO. Autofinanciado: </label>
+                                <span >S/ {{ actividad.ppto_autofinanciado }}</span> 
                             </div>
     
                             <div class="col s12 m6 l4 " >
-                                <label for="nombre_corto">PPTO. Total: </label>
-                                <span >S/ {{ actividad.total }}</span> 
+                                <label>PPTO. Total: </label>
+                                <span >S/ {{ actividad.ppto_total }}</span> 
                             </div>           
                         </div>                              
                     </div>
                     
-                    <div class="actividades-proyecto">
-                        <div class="header-actividades">
-                            <h2>Presupuesto</h2>
-                            
-                            <div class="button-nueva-actividad">
-                                <button class="btn waves-effect waves-light upeu-garnet" >
-                                    <span class="hide-on-med-and-down show-on-large"><i class="fa fa-plus" style="font-size: 1em"></i> Nueva Actividad</span> 
-                                    <span class="show-on-medium-and-down hide-on-large-only"><i class="fa fa-plus" style="font-size: 1em"></i></span> 
-                                </button>                                    
-                            </div>
-    
-                        </div>
+                    <div class="presupuesto-actividad">
+
                         <div class="row">
-                            
-                            <app-actividad-tarjeta-horizontal [actividad]="actividad" [linkDetalle]="linkActividad" *ngFor="let actividad of actividades; let i = index" ></app-actividad-tarjeta-horizontal>
-                            
+                            <div class="col s12">
+                                <div class="col s12">
+                                    <ul class="tabs " materialize="Tabs" [materializeParams]="[{swipeable: false}]">
+                                        <li class="tab col s3"><a href="#tab1">Detalle PPTO.</a></li>
+                                        <li class="tab col s3"><a href="#tab2">Fondo PPTO.</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab1" class="col s12">
+                                    <div  *ngIf="!nuevoDetallePresupuesto" >
+                                        <div class="header-presupuesto">                                        
+                                            <h2>Detalle Presupuesto</h2>
+                                            <div class="button-nuevo-presupuesto">
+                                                <button class="btn waves-effect waves-light upeu-garnet" >
+                                                    <span class="hide-on-med-and-down show-on-large" (click)="nuevoDetallePresupuesto = true"><i class="fa fa-plus" style="font-size: 1em"></i> Detalle</span> 
+                                                    <span class="show-on-medium-and-down hide-on-large-only" (click)="nuevoDetallePresupuesto = true" ><i class="fa fa-plus" style="font-size: 1em"></i></span> 
+                                                </button>                                    
+                                            </div>
+                    
+                                        </div>
+                                        <table class="highlight responsive-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Detalle</th>
+                                                    <th>Precio Unitario</th>
+                                                    <th>Total</th>
+                                                    <th>Tipo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let ppto of presupuestos; let i = index ">
+                                                    <td>{{ i+1 }}</td>
+                                                    <td>5</td>
+                                                    <td>Detalle/Material/Servicio/Etc</td>
+                                                    <td>5.00</td>
+                                                    <td>25.00</td>
+                                                    <td>Gasto/Ingreso</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div *ngIf="nuevoDetallePresupuesto">
+                                        <div class="header-presupuesto">                                        
+                                            <h2>Nuevo Detalle de Presupuesto</h2>
+                                            <div class="button-nuevo-presupuesto">
+                                                <button class="btn waves-effect waves-light upeu-garnet" >
+                                                    <span class="hide-on-med-and-down show-on-large" (click)="nuevoDetallePresupuesto = false" ><i class="fa fa-undo" style="font-size: 1em"></i> Volver</span> 
+                                                    <span class="show-on-medium-and-down hide-on-large-only" (click)="nuevoDetallePresupuesto = false" ><i class="fa fa-undo" style="font-size: 1em"></i></span> 
+                                                </button>                                    
+                                            </div>
+                                            <form class="col s12 " > 
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>                                
+                        
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <textarea id="descripcion_proyecto" class="materialize-textarea"   >
+                                                        </textarea>
+                                                        <label for="descripcion_proyecto">Descripción</label>
+                                                    </div>     
+                        
+                                                    <div class="input-field bordered col l4 s12 mt-s-1" >
+                                                        <select class=""  materialize="FormSelect"    >
+                                                            <option   > Option 1</option>
+                                                            <option   > Option 1</option>
+                                                            <option   > Option 1</option>
+                                                        </select>
+                                                        <label >Tipo de Proyecto</label>
+                                                        <span >
+                                                        tiene que elegir un tipo</span>
+                                                    </div>                           
+                                                </div>   
+
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>      
+
+
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>
+                                            </form>
+                    
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab2" class="col s12">
+                                    <div *ngIf="!nuevoFondoPresupuesto">
+                                        <div class="header-presupuesto">                                        
+                                            <h2>Fondo Presupuestario</h2>
+                                            <div class="button-nuevo-presupuesto">
+                                                <button class="btn waves-effect waves-light upeu-garnet" >
+
+                                                    <span class="hide-on-med-and-down show-on-large" (click)="nuevoFondoPresupuesto = true" >
+                                                        <i class="fa fa-plus" style="font-size: 1em"></i> Fondo
+                                                    </span> 
+
+                                                    <span class="show-on-medium-and-down hide-on-large-only" (click)="nuevoFondoPresupuesto = true" >
+                                                        <i class="fa fa-plus" style="font-size: 1em"></i>
+                                                    </span> 
+                                                </button>                                    
+                                            </div>                    
+                                        </div>
+
+                                        <table class="highlight responsive-table" >
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Cuenta</th>
+                                                    <th>Nivel</th>
+                                                    <th>Cta/Nivel</th>
+                                                    <th>Tipo</th>
+                                                    <th>Importe</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let ppto of presupuestos; let i = index ">
+                                                    <td>{{ i+1 }}</td>
+                                                    <td>Enseñanza</td>
+                                                    <td>Adm. institucional</td>
+                                                    <td>70.01.01 / 6.01.01</td>
+                                                    <td>Operativo</td>
+                                                    <td>1,200.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <div *ngIf="nuevoFondoPresupuesto">
+                                        <div class="header-presupuesto">                                        
+                                            <h2>Nuevo Fondo Presupuestario</h2>
+                                            <div class="button-nuevo-presupuesto">
+                                                <button class="btn waves-effect waves-light upeu-garnet" >
+
+                                                    <span class="hide-on-med-and-down show-on-large" (click)="nuevoFondoPresupuesto = false">
+                                                        <i class="fa fa-undo" style="font-size: 1em"></i> Volver
+                                                    </span> 
+
+                                                    <span class="show-on-medium-and-down hide-on-large-only" (click)="nuevoFondoPresupuesto = false">
+                                                        <i class="fa fa-undo" style="font-size: 1em"></i>
+                                                    </span> 
+
+                                                </button>                                    
+                                            </div>   
+                                            <form class="col s12 " > 
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>                                
+                        
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <textarea id="descripcion_proyecto" class="materialize-textarea"   >
+                                                        </textarea>
+                                                        <label for="descripcion_proyecto">Descripción</label>
+                                                    </div>     
+                        
+                                                    <div class="input-field bordered col l4 s12 mt-s-1" >
+                                                        <select  class=""  materialize="FormSelect"    >
+                                                            <option   > Option 1</option>
+                                                            <option   > Option 1</option>
+                                                            <option   > Option 1</option>
+                                                        </select>
+                                                        <label >Tipo de Proyecto</label>
+                                                        <span >
+                                                        tiene que elegir un tipo</span>
+                                                    </div>                           
+                                                </div>   
+
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>      
+
+
+                                                <div class="row">
+                                                    <div class="input-field bordered col l8 s12">
+                                                        <input id="nombre_proyecto" type="text"  >
+                                                        <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    </div>
+                        
+                                                    <div class="input-field bordered col l4 s12">
+                                                        <input id="nombre_corto" type="text"  >
+                                                        <label for="nombre_corto">Nombre corto</label>
+                        
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
                         </div>
     
                         <!-- <div class="row">

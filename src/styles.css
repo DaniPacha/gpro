@@ -774,6 +774,20 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
 
 /* BREADCRUMB DE CADA PAGINA  FIN */
 
+/* TABS */
+.tabs .tab a {
+    color: rgba(153, 46, 69, 0.7);
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #992e45;
+}
+
+.tabs .tab a:focus, .tabs .tab a:hover, .tabs .tab a:focus.active {
+    background-color: rgba(233, 203, 98, 0.2);
+    outline: none;
+}
+
 
 /* TITULO DE CADA PAGÍNA */
 .title-page h2{

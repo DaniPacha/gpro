@@ -11,8 +11,12 @@ export class DetalleActividadComponent implements OnInit {
   @Input() paramsActividad: any;
   actividad: any;
   loadingAcividad = false;
-  presupuestos: any[] = [];
+  presupuestos: any[] = [1, 2, 3, 4, 5, 6];
   loadingPresupuestos = false;
+
+  nuevoDetallePresupuesto = false;
+  nuevoFondoPresupuesto = false;
+
   linkActividad = '/nuevo-proyecto/detalle-actividad';
 
   constructor( private sProyecto: ProyectoService, private router: ActivatedRoute ) {
@@ -33,17 +37,6 @@ export class DetalleActividadComponent implements OnInit {
       }
     });
 
-    // this.sProyecto.proyectoActividades( this.paramsActividad )
-    //   .subscribe( (data: any) => {
-    //     console.log('Presupuesto Proyecto:');
-    //     console.log(data);
-    //     if ( data.status === 200 ) {
-    //     this.loadingPresupuestos = true;
-    //     this.presupuestos = data.data;
-    //     } else {
-    //       console.log( data.message );
-    //     }
-    //   });
   }
 
   ngOnInit() {
