@@ -60,6 +60,14 @@ export class ProyectoService {
     return this.http.get( this.url + 'proyectos/lista_tipo_proyecto.jsp' );
   }
 
+  unidadMedida() {
+    return this.http.get( this.url + 'proyectos/unidad_medida.jsp' );
+  }
+
+  tipoProducto() {
+    return this.http.get( this.url + 'proyectos/tipo_producto.jsp' );
+  }
+
   listaAreasPersona() {
     return this.http.get( this.url + 'proyectos/lista_areas_persona.jsp' );
   }
@@ -70,6 +78,8 @@ export class ProyectoService {
       {params: parametros}
     );
   }
+
+  
   
 
 }

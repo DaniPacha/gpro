@@ -637,6 +637,10 @@ textarea.materialize-textarea.has-error:not(.browser-default) ~ label:not(.label
     margin-top: -6px !important;
 }
 
+.input-field .prefix.active {
+    color: #992e45;
+  }
+
 
 /* FIN FORMULARIOS AJUSTES */
 

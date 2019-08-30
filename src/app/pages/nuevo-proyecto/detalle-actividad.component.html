@@ -130,7 +130,7 @@
                                 </ul>
                             </div>
                             <div id="tab1" class="col s12">
-                                <div  *ngIf="!nuevoDetallePresupuesto" >
+                                <div  *ngIf="!nuevoDetallePresupuesto" class="animated fadeIn">
                                     <div class="header-presupuesto">                                        
                                         <h2>Detalle Presupuesto</h2>
                                         <div class="button-nuevo-presupuesto">
@@ -153,7 +153,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let ppto of presupuestos; let i = index ">
+                                            <tr *ngFor="let ppto of detallePresupuesto; let i = index ">
                                                 <td>{{ i+1 }}</td>
                                                 <td>5</td>
                                                 <td>Detalle/Material/Servicio/Etc</td>
@@ -165,7 +165,7 @@
                                     </table>
                                 </div>
 
-                                <div *ngIf="nuevoDetallePresupuesto">
+                                <div *ngIf="nuevoDetallePresupuesto" class="animated fadeIn">
                                     <div class="header-presupuesto">                                        
                                         <h2>Nuevo Detalle de Presupuesto</h2>
                                         <div class="button-nuevo-presupuesto">
@@ -247,7 +247,7 @@
                             </div>
 
                             <div id="tab2" class="col s12">
-                                <div *ngIf="!nuevoFondoPresupuesto">
+                                <div *ngIf="!nuevoFondoPresupuesto"  class="animated fadeIn">
                                     <div class="header-presupuesto">                                        
                                         <h2>Fondo Presupuestario</h2>
                                         <div class="button-nuevo-presupuesto">
@@ -276,8 +276,8 @@
                                                 <th>Importe</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr *ngFor="let ppto of presupuestos; let i = index ">
+                                        <tbody >
+                                            <tr *ngFor="let ppto of fondoPresupuestario; let i = index " class="animated fadeIn">
                                                 <td>{{ i+1 }}</td>
                                                 <td>Enseñanza</td>
                                                 <td>Adm. institucional</td>
@@ -290,7 +290,7 @@
 
                                 </div>
 
-                                <div *ngIf="nuevoFondoPresupuesto">
+                                <div *ngIf="nuevoFondoPresupuesto " class="animated fadeIn">
                                     <div class="header-presupuesto">                                        
                                         <h2>Nuevo Fondo Presupuestario</h2>
                                         <div class="button-nuevo-presupuesto">
@@ -307,64 +307,51 @@
                                             </button>                                    
                                         </div>   
                                         <form class="col s12 " > 
+
                                             <div class="row">
-                                                <div class="input-field bordered col l8 s12 mb-s-1" >
-                                                    <input id="nombre_proyecto" type="text"  >
-                                                    <label for="nombre_proyecto">Nombre del proyecto</label> 
-                                                </div>
-                    
-                                                <div class="input-field bordered col l4 s12 mb-s-1">
-                                                    <input id="nombre_corto" type="text"  >
-                                                    <label for="nombre_corto">Nombre corto</label>
-                    
+                                                <div class="input-field bordered col s12 mb-s-1 mt-s-1" >
+                                                    <i class="material-icons prefix">search</i>
+                                                    <input type="text" id="autocompleteFondoPpto" class="autocomplete" placeholder="Buscar fondo presupuestario"
+                                                    materialize="Autocomplete" data-target="listaPresupuestario" >
                                                 </div>
                                             </div>                                
                     
                                             <div class="row">
-                                                <div class="input-field bordered col l8 s12 mb-s-1">
-                                                    <textarea id="descripcion_proyecto" class="materialize-textarea"   >
-                                                    </textarea>
-                                                    <label for="descripcion_proyecto">Descripción</label>
-                                                </div>     
-                    
-                                                <div class="input-field bordered col l4 s12 mb-s-1" >
-                                                    <select  class=""  materialize="FormSelect"    >
-                                                        <option   > Option 1</option>
-                                                        <option   > Option 1</option>
-                                                        <option   > Option 1</option>
-                                                    </select>
-                                                    <label >Tipo de Proyecto</label>
-                                                    <span >
-                                                    tiene que elegir un tipo</span>
-                                                </div>                           
+                                                <div class="col l3 s6 mb-s-1">
+                                                    <label >cuenta: </label> 
+                                                    <span >70.01.01</span>
+                                                </div>   
+                                                
+                                                <div class="col l3 s6 mb-s-1">
+                                                    <label >Nivel: </label> 
+                                                    <span >6.01.01</span>
+                                                </div> 
+                                                
+                                                <div class="col l3 s6 mb-s-1">
+                                                    <label >cuenta: </label> 
+                                                    <span >70.01.01</span>
+                                                </div> 
+                                                
+                                                <div class="col l3 s6 mb-s-1">
+                                                    <label >cuenta: </label> 
+                                                    <span >70.01.01</span>
+                                                </div> 
+
                                             </div>   
 
                                             <div class="row">
-                                                <div class="input-field bordered col l8 s12 mb-s-1">
+                                                <div class="input-field bordered col s12 l4 mb-s-1" >
                                                     <input id="nombre_proyecto" type="text"  >
-                                                    <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    <label for="nombre_proyecto">Importe</label> 
                                                 </div>
-                    
-                                                <div class="input-field bordered col l4 s12 mb-s-1">
-                                                    <input id="nombre_corto" type="text"  >
-                                                    <label for="nombre_corto">Nombre corto</label>
-                    
-                                                </div>
-                                            </div>      
 
-
-                                            <div class="row">
-                                                <div class="input-field bordered col l8 s12 mb-s-1">
+                                                <div class="input-field bordered col s12 l8 mb-s-1" >
                                                     <input id="nombre_proyecto" type="text"  >
-                                                    <label for="nombre_proyecto">Nombre del proyecto</label> 
+                                                    <label for="nombre_proyecto">Observaciones</label> 
                                                 </div>
-                    
-                                                <div class="input-field bordered col l4 s12 mb-s-1">
-                                                    <input id="nombre_corto" type="text"  >
-                                                    <label for="nombre_corto">Nombre corto</label>
-                    
-                                                </div>
-                                            </div>
+                                            </div> 
+
+                                            
                                         </form>
                                     </div>
                                 </div>
